@@ -1,0 +1,13 @@
+@import "../../../../styles/variable";
+
+.partner-box{
+  width: 100%;
+  margin-right: 0;
+  margin-left: 0;
+  .row{
+    margin: 0;
+  }
+  &__title{
+    color: $red-guest;
+  }
+}

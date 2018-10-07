@@ -1,0 +1,50 @@
+@mixin optional-at-root($sel) {
+    @at-root #{if(not &, $sel, selector-append(&, $sel))} {
+      @content;
+    }
+  }
+  
+  @mixin placeholders {
+      @include optional-at-root('::-webkit-input-placeholder') {
+        @content;
+      }
+    
+      @include optional-at-root(':-moz-placeholder') {
+        @content;
+      }
+    
+      @include optional-at-root('::-moz-placeholder') {
+        @content;
+      }
+    
+      @include optional-at-root(':-ms-input-placeholder') {
+        @content;
+      }
+  }
+  
+  @mixin animate($animation, $delay, $duration, $repeat, $easing, $direction, $fillmode) {
+      -webkit-animation: $animation $delay $duration $repeat $easing $direction $fillmode;
+         -moz-animation: $animation $delay $duration $repeat $easing $direction $fillmode;
+          -ms-animation: $animation $delay $duration $repeat $easing $direction $fillmode;
+              animation: $animation $delay $duration $repeat $easing $direction $fillmode;
+  }
+  
+  
+  // Keyframes Mixin
+  // https://gist.github.com/ericam/1607696
+  
+  @mixin keyframes($name) {
+      @-webkit-keyframes #{$name} {
+          @content;
+      }
+      @-moz-keyframes #{$name} {
+          @content;
+      }
+      @-ms-keyframes #{$name} {
+          @content;
+      }
+      @keyframes #{$name} {
+          @content;
+      }
+  }
+  

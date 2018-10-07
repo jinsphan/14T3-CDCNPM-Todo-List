@@ -1,0 +1,62 @@
+[
+  {
+    "title" : "CHO THUÊ XE THEO NĂM",
+    "params" : "nam",
+    "reason": "Tại sao nhu cầu thuê xe dài hạn ngày càng tăng cao?",
+    "description": "Thuê xe du lịch dài hạn theo năm, theo tháng hiện nay đã ngày càng trở nên phổ biến và là một giải pháp kinh tế hiệu quả cho các doanh nghiệp, cá nhân có nhu cầu sử dụng xe ô tô nhưng trước mắt chưa thật sự cần thiết khi phải đầu tư một số tiền vào việc mua xe. Đặc biệt là những doanh nghiệp mới hoạt động hoặc những nhu cầu sử dụng xe trong một thời gian nhất định cho một dự án hay công việc nào đấy.",
+    "content": [
+      "- Sở hữu thương hiệu xe đã chọn phù hợp với màu sắc, kiểu dáng và thông số kỹ thuật",
+      "- Lái xe thân thiện, thông thuộc mọi tuyến đường, đưa đón bạn tân nơi, chính xác và an toàn.",
+      "- Giảm chi phí ( Chí phí thuê xe hàng tháng giảm đáng kể so với chi phí để mua xe riêng như tiền mua xe, phí bảo hiểm, phí bảo trì đường bộ, phí đăng kiểm, phí bảo dưỡng hàng tháng, phí gửi xe, lương tài xế…)",
+      "- Đội ngũ nhân viên tư vấn luôn sẵn lòng phục vụ 24/7, tư vấn, báo giá hay giải quyết sự cố.",
+      "- Thủ tục thuê xe nhanh chóng, đơn giản"
+      ]
+  },
+  {
+    "title" : "CHO THUÊ XE THEO THÁNG",
+    "params" : "thang",
+    "reason": "Tại sao nhu cầu thuê xe dài hạn ngày càng tăng cao?",
+
+    "description": "Thuê xe du lịch dài hạn theo năm, theo tháng hiện nay đã ngày càng trở nên phổ biến và là một giải pháp kinh tế hiệu quả cho các doanh nghiệp, cá nhân có nhu cầu sử dụng xe ô tô nhưng trước mắt chưa thật sự cần thiết khi phải đầu tư một số tiền vào việc mua xe. Đặc biệt là những doanh nghiệp mới hoạt động hoặc những nhu cầu sử dụng xe trong một thời gian nhất định cho một dự án hay công việc nào đấy.",
+    "content": [
+      "- Sở hữu thương hiệu xe đã chọn phù hợp với màu sắc, kiểu dáng và thông số kỹ thuật",
+      "- Lái xe thân thiện, thông thuộc mọi tuyến đường, đưa đón bạn tân nơi, chính xác và an toàn.",
+      "- Giảm chi phí ( Chí phí thuê xe hàng tháng giảm đáng kể so với chi phí để mua xe riêng như tiền mua xe, phí bảo hiểm, phí bảo trì đường bộ, phí đăng kiểm, phí bảo dưỡng hàng tháng, phí gửi xe, lương tài xế…)",
+      "- Đội ngũ nhân viên tư vấn luôn sẵn lòng phục vụ 24/7, tư vấn, báo giá hay giải quyết sự cố.",
+      "- Thủ tục thuê xe nhanh chóng, đơn giản"
+    ]
+
+  },
+  {
+    "title" : "CHO THUÊ XE THEO QUÝ",
+    "params" : "quy",
+    "reason": "Tại sao nhu cầu thuê xe dài hạn ngày càng tăng cao?",
+
+    "description": "Thuê xe du lịch dài hạn theo năm, theo tháng hiện nay đã ngày càng trở nên phổ biến và là một giải pháp kinh tế hiệu quả cho các doanh nghiệp, cá nhân có nhu cầu sử dụng xe ô tô nhưng trước mắt chưa thật sự cần thiết khi phải đầu tư một số tiền vào việc mua xe. Đặc biệt là những doanh nghiệp mới hoạt động hoặc những nhu cầu sử dụng xe trong một thời gian nhất định cho một dự án hay công việc nào đấy.",
+    "content": [
+      "- Sở hữu thương hiệu xe đã chọn phù hợp với màu sắc, kiểu dáng và thông số kỹ thuật",
+      "- Lái xe thân thiện, thông thuộc mọi tuyến đường, đưa đón bạn tân nơi, chính xác và an toàn.",
+      "- Giảm chi phí ( Chí phí thuê xe hàng tháng giảm đáng kể so với chi phí để mua xe riêng như tiền mua xe, phí bảo hiểm, phí bảo trì đường bộ, phí đăng kiểm, phí bảo dưỡng hàng tháng, phí gửi xe, lương tài xế…)",
+      "- Đội ngũ nhân viên tư vấn luôn sẵn lòng phục vụ 24/7, tư vấn, báo giá hay giải quyết sự cố.",
+      "- Thủ tục thuê xe nhanh chóng, đơn giản"
+    ]
+  },
+  {
+    "title" : "CHO THUÊ XE DU LỊCH",
+    "params" : "du-lich",
+    "reason": "Lợi ích:",
+
+    "description": "Với ý niệm mang tới sự chuyên nghiệp và tiện lợi trong những kế hoạch di chuyển của mình. Dịch vụ thuê xe du lịch theo yêu cầu của TTB mang đến sự đa dạng trong nhu cầu như thuê xe cưới, nghỉ dưỡng cùng gia đình, đi công tác ngắn ngày, đưa đón hội nghị, phục vụ sự kiện,....",
+    "content": ["- Làm chủ thời gian và hành trình di chuyển.","- Không phải bận tâm tới những vấn đề về đường xá, vì các tài xế kinh nghiệm và thành thạo đường xá. Khi thuê xe du lịch cả tài xế bạn có thể thoải mái tận hưởng chuyến du lịch của mình một cách tự nhiên nhất.","-  An toàn và thoải mái. Vì có thể tự do, chủ động được thời gian, lô trình, tuyến đường và các kế hoạch của mình.","- Được phục vụ chu đáo, yên tâm trên mỗi chặng đường bởi đội ngũ lái xe của TTB luôn giàu kinh nghiệm và có tay nghề cao"]
+
+  },
+  {
+    "title" : "CHO THUÊ XE THEO TUYẾN",
+    "params" : "theo-tuyen",
+    "reason": "Lợi ích:",
+
+    "description": "Đem đến cho quý khách những trải nghiệp tuyệt với trên những chuyến đi là cách mà TTB cung cấp dịch vụ cho thuê xe du lịch theo tuyến. An toàn và thân thiện là cảm nhận bạn sẽ được tận hưởng trong suốt hành trình của mình.",
+    "content": ["- Làm chủ thời gian và hành trình di chuyển.","- Tiết kiệm chi phí so với taxi","- An toàn và thoải mái tận hưởng chuyến du lịch của mình một cách tự nhiên nhất","- Được phục vụ chu đáo, yên tâm trên mỗi chặng đường bởi đội ngũ lái xe của TTB luôn giàu kinh nghiệm và có tay nghề cao"]
+
+  }
+]

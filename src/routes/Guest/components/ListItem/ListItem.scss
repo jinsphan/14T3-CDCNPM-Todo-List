@@ -1,0 +1,61 @@
+@import "../../../../styles/variable";
+.list-product{
+  button{
+    background-color:$background-guest;
+    border-color:$border-color-base-guest ;
+    margin-bottom: 10px;
+    border-radius: 1.5rem;
+  }
+  .list-product-btn__bottom{
+    background-color: $red-guest;
+    border: none;
+    color: #ffffff;
+    font-size: 20px;
+  }
+  .product-item{
+    //border: 1px solid #d9d8d8;
+    border-radius: 5px;
+    strong{
+      font-weight: 700;
+    }
+    button{
+      background-color: $red-guest;
+      border-radius: 5px;
+      color :$text-alt-guest;
+      font-size: $font-size-base;
+      border: none;
+      &:active{
+        background-color: $yellow-guest!important;
+      }
+    }
+    &__info{
+      list-style: none;
+      padding: 15px 0px;
+      li{
+        padding: 5px 0px;
+        i{
+          font-size: 16px;
+          color: $text-color-base-guest;
+          margin-right: 15px;
+        }
+        strong{
+          padding-right: 5px;
+        }
+      }
+    }
+  }
+}
+.tours-item{
+  .card-body{
+    padding: 0px;
+    img{
+      height: 200px;
+      width: 100%;
+      border-top-left-radius: 5px;
+      border-top-right-radius: 5px;
+    }
+  }
+  .tours-item-info{
+    padding: 1.25rem;
+  }
+}

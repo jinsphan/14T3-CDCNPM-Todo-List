@@ -1,0 +1,22 @@
+[
+  {
+    "name": "Đơn đặt hàng",
+    "icon": "ti-shopping-cart text-info",
+    "key": "bookings"
+  },
+  {
+    "name": "Danh sách xe",
+    "icon": "ti-car text-purple",
+    "key": "cars"
+  },
+  {
+    "name": "Tin tức",
+    "icon": "ti-write text-danger",
+    "key": "news"
+  },
+  {
+    "name": "Thông báo",
+    "icon": "ti-announcement text-success",
+    "key": "notification"
+  }
+]

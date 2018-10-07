@@ -1,0 +1,12 @@
+.news-item{
+  .el-card-item{
+    height: 380px;
+  }
+  .el-card-content{
+    padding: 15px;
+    p{
+      line-height: 1.5rem;
+      text-align: justify;
+    }
+  }
+}

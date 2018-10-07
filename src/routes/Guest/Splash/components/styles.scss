@@ -1,0 +1,255 @@
+@import '../../../../styles/_mixin.scss';
+.splashScreen {
+    display: flex;
+    flex-direction: column;
+}
+
+.beesCollection {
+    position: absolute;
+    z-index: -1;
+    width: 100%;
+    height: 100%;
+    top: 0;
+    left: 0;
+}
+
+:global {
+  #bee-1 {
+    x: -30;
+    y: -38;
+    width: 126px;
+    height: 126px;
+  }
+
+  #bee-2 {
+    x: -43;
+    y: -65;
+    width: 143px;
+    height: 143px;
+  }
+  #bee-3,#bee-4 {
+    x: -50;
+    y: -14;
+    width: 143px;
+    height: 143px;
+  }
+  #bee-svg {
+    background-size: contain;
+    overflow: visible;
+  }
+
+  #bee-svg path,
+  #bee-svg-search path {
+    background-size: contain;
+    width: 1000px;
+    height: 1000px
+  }
+}
+.animeBeeOne .bee {
+    width: 105px;
+    height: 501px;
+    background: url("../images/bee-1.png") no-repeat;
+    background-size: 105px 501px;
+    position: absolute;
+    bottom: 0;
+    left: 10px;
+    z-index: 3;
+    @include animate(BeeBottomToTop, 2s, 0s, infinite, linear, normal, none);
+}
+
+.animeBeeTwo .bee {
+    width: 145px;
+    height: 245px;
+    background: url("../images/bee-2.png") no-repeat;
+    background-size: 145px 245px;
+    position: absolute;
+    bottom: 5%;
+    left: 48%;
+    z-index: 3;
+    @include animate(leftCircle, 2s, 0s, infinite, linear, normal, none);
+}
+
+.animeBeeThree .bee {
+    width: 538px;
+    height: 250px;
+    background: url("../images/bee-3.png") no-repeat;
+    background-size: 538px 250px;
+    position: absolute;
+    top: 20%;
+    right: 18%;
+    z-index: 3;
+    @include animate(rightCircle, 2s, 0s, infinite, linear, normal, none);
+}
+
+.animeBeeFour .bee {
+    width: 184px;
+    height: 250px;
+    background: url("../images/bee-4.png") no-repeat;
+    background-size: 184px 250px;
+    position: absolute;
+    bottom: 10%;
+    right: 5%;
+    z-index: 3;
+    @include animate(leftCircle, 2s, 0s, infinite, linear, normal, none);
+}
+
+@include keyframes(search) {
+	0% {
+		transform: scale(0.7);
+        opacity: 0.5;
+        left: 150px;
+	}
+	100% {
+		transform: scale(1);
+        opacity: 1;
+        left: 0;
+	}
+}
+
+@include keyframes(enhance) {
+	0% {
+		transform: scale(0.7);
+        opacity: 0.8;
+        top: 0;
+        left: 150px;
+	}
+	100% {
+		transform: scale(1);
+        opacity: 1;
+        top: 0;
+        left: 0;
+	}
+}
+
+@include keyframes(config) {
+	0% {
+		transform: scale(0.15);
+        opacity: 0.3;
+        top: 150px;
+        left: -75px;
+	}
+	100% {
+		transform: scale(1);
+        opacity: 1;
+        top: 0;
+        left: 0;
+	}
+}
+
+@include keyframes(forum) {
+	0% {
+		transform: scale(0.3);
+        opacity: 0.5;
+        top: 200px;
+        left: -250px;
+	}
+	100% {
+		transform: scale(1);
+        opacity: 1;
+        top: 0;
+        left: 0;
+	}
+}
+
+@include keyframes(BeeBottomToTop) {
+    0% {
+        bottom: 0;
+    }
+    100% {
+        bottom: 100%;
+    }
+}
+
+@include keyframes(leftCircle) {
+    0% {
+        transform: rotate(0deg);
+    }
+    100% {
+        transform: rotate(360deg);
+    }
+}
+
+@include keyframes(rightCircle) {
+    0% {
+        transform: rotate(0deg);
+    }
+    100% {
+        transform: rotate(-360deg);
+    }
+}
+
+
+/* Mobile Starts from 1365px */
+
+@media screen and (max-width: 1365px) {
+    .splashScreen {
+        .flowNav {
+            height: auto;
+            padding: 105px 0 0 0;
+            ul {
+                li {
+                    margin: 0 10px 0 0;
+                    &:last-child {
+                        margin: 50px 0 0 0;
+                    }
+                    &:first-child {
+                        margin: 50px 10px 0 0;
+                        top: 0;
+                    }
+                    &:nth-child(2) {
+                        margin: 0 15px 0 0;
+                    }
+                    &:nth-child(3) {
+                        margin: 0 15px 0 0;
+                    }
+                    
+                    
+                    
+                    
+                }
+            }
+        }
+        :global {
+            .mobileHeader {
+                &.active {
+                    .menuBg {
+                        height: 196px;
+                    }
+                    .overlay {
+                        top: 126px;
+                    }
+                }
+            }
+        }
+        .animeBeeOne .bee {
+          left: -10px;
+        }
+        .animeBeeTwo .bee {
+          left: 10%;
+        }
+        .animeBeeThree .bee {
+          right: -5%;
+          width: 269px;
+          height: 125px;
+          background-size: 269px 125px;
+        }
+        .animeBeeFour .bee {
+          right: 0;
+        }
+    }
+
+    @include keyframes(forum) {
+    	0% {
+    		transform: scale(0.3);
+            opacity: 0.5;
+            top: 200px;
+            left: -150px;
+    	}
+    	100% {
+    		transform: scale(1);
+            opacity: 1;
+            top: 0;
+            left: 0;
+    	}
+    }
+}
