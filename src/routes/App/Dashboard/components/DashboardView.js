@@ -4,10 +4,6 @@ import { Link, browserHistory } from 'react-router'
 // Components
 import PageTitle from '../../../../components/Elements/PageTitle'
 // Models
-import Bookings from '../../../../services/api/model/Bookings'
-import Cars from '../../../../services/api/model/Cars'
-import News from '../../../../services/api/model/News'
-import Settings from '../../../../services/api/model/Settings'
 // Fixtures
 import dashboard from './Dashboard'
 // Styles
@@ -24,30 +20,6 @@ export class DashboardView extends Component {
     }
   }
   componentDidMount(){
-    Bookings.count()
-      .then( res => {
-        this.setState({
-          bookings: res.data.count
-        });
-      })
-    Cars.count()
-      .then( res => {
-        this.setState({
-          cars: res.data.count
-        });
-      })
-    News.count()
-      .then( res => {
-        this.setState({
-          news: res.data.count
-        });
-      })
-    Bookings.findByStatus()
-      .then( res => {
-        this.setState({
-          notification: res.data.length
-        });
-      })
   }
   render () {
     const { bookings } = this.state

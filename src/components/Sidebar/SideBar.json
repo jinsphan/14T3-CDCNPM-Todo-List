@@ -5,44 +5,43 @@
     "icon": "icon-speedometer"
   },
   {
-    "name": "Đơn đặt hàng",
-    "link": "/app/bookings",
-    "icon": "icon-target"
-  },
-  {
-    "name": "Tin tức",
-    "link": "/app/news",
-    "icon": "ti-write"
-  },
-  {
-    "name": "Danh sách xe",
-    "link": "/app/cars",
-    "icon": "ti-car",
+    "name": "Master Data",
+    "link": "/app/master",
+    "icon": "icon-target",
     "hasArrow": true,
     "subLink": [
       {
-        "name": "Xe hợp đồng",
-        "key": "hop-dong"
+        "name": "Sản phẩm",
+        "key": "product"
       },
       {
-        "name": "Xe tự lái",
-        "key": "tu-lai"
+        "name": "Xe",
+        "key": "car"
+      },
+      {
+        "name": "Nhân viên",
+        "key": "employees"
       }
     ]
   },
   {
-    "name": "Danh sách tours",
-    "link": "/app/tours",
-    "icon": "ti-map-alt"
-  },
-  {
-    "name": "Dịch vụ",
-    "link": "/app/services",
-    "icon": "ti-id-badge"
-  },
-  {
-    "name": "Cài đặt",
-    "link": "/app/settings",
-    "icon": "icon-settings"
+    "name": "Phân Quyền",
+    "link": "/app/role",
+    "icon": "icon-target",
+    "hasArrow": true,
+    "subLink": [
+      {
+        "name": "Nhóm người dùng",
+        "key": "group-user"
+      },
+      {
+        "name": "Người dùng",
+        "key": "users"
+      },
+      {
+        "name": "Quyền",
+        "key": "role"
+      }
+    ]
   }
 ]

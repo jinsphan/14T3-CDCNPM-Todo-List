@@ -2,24 +2,18 @@ import React, { Component } from 'react'
 import PropTypes from 'prop-types'
 import './LoginView.scss'
 import Splash from '../../Guest/Splash/components/SplashView'
-
-const NODE_ENV = process.env.NODE_ENV || 'development';
-
+import {browserHistory} from 'react-router'
 class LoginView extends Component {
   constructor () {
     super();
     this.state = {
-      email: NODE_ENV === 'development' ? 'admin@admin.com' : '',
-      password: NODE_ENV === 'development' ? 'admin' : '',
+      email:'admin@admin.com',
+      password: 'admin',
       checkbox: false
     }
   }
   login = (event) => {
-    // event.preventDefault()
-    const email = this.state.email;
-    const password = this.state.password;
-    const checkbox = this.state.checkbox;
-    this.props.login(email, password, checkbox)
+    browserHistory.push('/app')
   };
 
   render () {
@@ -34,7 +28,8 @@ class LoginView extends Component {
       <div className='card-body'>
      
         <form className='form-horizontal form-material' id='loginform' onSubmit={(e) => this.login(e)}>
-          <a href='javascript:void(0)' className='text-center db text-left'><img src={require('../../../styles/images/logo.png')} style={{ width:'200px', position:'absolute', marginTop:'-50px', marginLeft:'-50px' }} alt='Home' />
+          <a href='javascript:void(0)' className='text-center' style={{margin : '0 50px'}}>
+          <img src={require('../../../styles/images//logo/logo_transparent.png')} style={{ width:'200px'}} alt='Home' />
             <br />
             </a>
           <div className='form-group m-t-40'>

@@ -10,15 +10,15 @@ const logout = () => {
   localStorage.clear()
   browserHistory.push('/')
 }
-export const Header = ({ dropdownName, updateDropdown, userInfo, settings = 'Thuê xe TTB' }) => {
+export const Header = ({ dropdownName, updateDropdown, settings = 'Fresh Food' }) => {
   return (
     <header className='topbar'>
       <nav className='navbar top-navbar navbar-expand-md navbar-dark'>
         <div className='navbar-header'>
           <Link className='navbar-brand' to='/'>
             <b>
-              <img src={require('../../styles/images/logo-icon.png')} alt='homepage' className='dark-logo' />
-              <img src={require('../../styles/images/logo-light-icon.png')} alt='homepage' className='light-logo' />
+              <img src={require('../../styles/images/logo/logo_transparent.png')} alt='homepage' className='dark-logo' style={{width : '60px'}} />
+              <img src={require('../../styles/images/logo/logo_transparent.png')} alt='homepage' className='light-logo'style={{width : '60px'}} />
             </b>
             <span className='hidden-xs mini-logo'>{settings.appName}</span>
           </Link>
@@ -39,8 +39,8 @@ export const Header = ({ dropdownName, updateDropdown, userInfo, settings = 'Thu
           <ul className='navbar-nav my-lg-0'>
             <li className={`nav-item dropdown u-pro ${dropdownName === 'profile' && 'show'}`}>
               <Link onClick={() => updateDropdown('profile')} className='nav-link dropdown-toggle waves-effect waves-dark profile-pic'>
-                <img src={userInfo.avatarUrl || require('../../styles/images/users/1.jpg')} alt='user' className='' />
-                <span className='hidden-md-down' style={{ paddingLeft: '10px' }}>{userInfo.username} &nbsp;<i className='fa fa-angle-down' /></span> </Link>
+                <img src={require('../../styles/images/logo/logo.png')} alt='user' className='' />
+                <span className='hidden-md-down' style={{ paddingLeft: '10px' }}>username &nbsp;<i className='fa fa-angle-down' /></span> </Link>
               <div className={`dropdown-menu dropdown-menu-right animated flipInY ${dropdownName === 'profile' && 'show'}`}>
 
                 <Link to='/app/profile' onClick={() => updateDropdown('')}  className='dropdown-item'><i className='ti-user' /> My Profile</Link>

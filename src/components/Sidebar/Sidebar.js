@@ -13,7 +13,10 @@ class Sidebar extends Component {
     super()
     this.state = {
       isInboxFeature: false,
-      isSubLink: false,
+      isSubLink: {
+        status : false,
+        key : ''
+      },
     }
   }
   toggleSidebar = (route) => {
@@ -23,29 +26,23 @@ class Sidebar extends Component {
     document.body.classList.toggle('mini-sidebar')
   }
   render () {
-    const { userInfo } = this.props
     return (
       <aside className='left-sidebar'>
         <div className='scroll-sidebar ps ps--theme_default ps--active-y'>
           <PerfectScrollbar>
             <nav className='sidebar-nav active'>
               <ul id='sidebarnav'>
-                <li className='user-pro'>
-                  <a href="javascript:void(0)" className='waves-effect waves-dark' >
-                    <img src={userInfo.avatarUrl || avatar} alt='user-img' className='img-circle' />
-                    <span className='hide-menu'>{userInfo.username}</span>
-                  </a>
-                </li>
+                
                 {
                   menus.map( item => {
                     if(item.hasArrow){
                       return(
                         <li key={item.name}>
-                          <a href="javascript:void(0)" onClick={() => { this.setState({isSubLink: !this.state.isSubLink})}} className={`${this.state.isSubLink && 'active'} has-arrow waves-effect waves-dark`}>
+                          <a href="javascript:void(0)" onClick={() => { this.setState({isSubLink: {status : this.state.isSubLink.key === item.name ? !this.state.isSubLink.status : this.state.isSubLink.status , key : item.name}})}} className={`${this.state.isSubLink.status && this.state.isSubLink.key === item.name && 'active'} has-arrow waves-effect waves-dark`}>
                             <i className={item.icon} />
                             <span className='hide-menu'>{item.name}</span>
                           </a>
-                          <ul aria-expanded="false" className={`${this.state.isSubLink ? 'in' : ''} collapse`}>
+                          <ul aria-expanded="false" className={`${this.state.isSubLink.status && this.state.isSubLink.key === item.name ? 'in' : ''} collapse`}>
                             {
                               item.subLink.map((subItem, index) => (
                                 <li key={index}><Link to={`${item.link}/${subItem.key}`}>{subItem.name}</Link></li>

@@ -1,15 +1,15 @@
 import LoginRoute from './Login'
 import AppRoute from './App'
-import GuestRoute from './Guest'
+// import GuestRoute from './Guest'
 import PageNotFoundRoute from './PageNotFound'
 export const createRoutes = (store) => (
     {
-      path        : '',
-      indexRoute  : GuestRoute(),
+      path        : '/',
+      indexRoute  : LoginRoute(),
       childRoutes : [
-        GuestRoute(),
-        AppRoute(),
+        // GuestRoute(),
         LoginRoute(),
+        AppRoute(),
         PageNotFoundRoute(),
       ]
     }

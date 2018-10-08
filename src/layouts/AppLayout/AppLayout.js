@@ -1,7 +1,6 @@
 import React, { Component } from 'react'
 import { connect } from 'react-redux'
 import { updateDropdown } from '../../store/site'
-import { checkLogin } from '../../routes/Login/modules/login'
 import PropTypes from 'prop-types'
 import Sidebar from '../../components/Sidebar/Sidebar'
 import Header from '../../components/Header/Header'
@@ -15,7 +14,6 @@ class AppLayout extends Component {
     this.resetDropdown = this.resetDropdown.bind(this)
   }
   componentWillMount () {
-    this.props.checkLogin()
   }
   componentDidMount () {
     document.addEventListener('click', this.resetDropdown)
@@ -35,7 +33,7 @@ class AppLayout extends Component {
   }
   render () {
     const { children, updateDropdown, dropdownName, isLogin, userInfo, settings } = this.props
-    if (isLogin) {
+    if (true) {
       return <div id='main-wrapper' className="app-layout">
         <div
           ref={this.setWrapperRef}
@@ -45,10 +43,8 @@ class AppLayout extends Component {
         <Header
           updateDropdown={updateDropdown}
           dropdownName={dropdownName}
-          userInfo={userInfo}
-          settings={settings}
         />
-        <Sidebar userInfo={userInfo} />
+        <Sidebar/>
         <div className='page-wrapper '>
           {children}
         </div>
@@ -63,21 +59,14 @@ class AppLayout extends Component {
 AppLayout.propTypes = {
   children: PropTypes.node,
   updateDropdown: PropTypes.func.isRequired,
-  checkLogin: PropTypes.func.isRequired,
   dropdownName: PropTypes.string.isRequired,
-  userInfo: PropTypes.object.isRequired,
-  settings: PropTypes.object.isRequired
 }
 
 const mapStateToProps = state => ({
   dropdownName: state.site.dropdownName,
-  userInfo: state.auth.userInfo,
-  isLogin: state.auth.isLogin,
-  settings : state.site.settings
 })
 const mapDispatchToProps = {
   updateDropdown,
-  checkLogin
 }
 
 export default connect(mapStateToProps, mapDispatchToProps)(AppLayout)
