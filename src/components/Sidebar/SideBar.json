@@ -40,7 +40,7 @@
       },
       {
         "name": "Quyền",
-        "key": "role"
+        "key": "roles"
       }
     ]
   }

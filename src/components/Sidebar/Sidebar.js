@@ -14,7 +14,7 @@ class Sidebar extends Component {
     this.state = {
       isInboxFeature: false,
       isSubLink: {
-        status : false,
+        status : true,
         key : ''
       },
     }
@@ -38,7 +38,7 @@ class Sidebar extends Component {
                     if(item.hasArrow){
                       return(
                         <li key={item.name}>
-                          <a href="javascript:void(0)" onClick={() => { this.setState({isSubLink: {status : this.state.isSubLink.key === item.name ? !this.state.isSubLink.status : this.state.isSubLink.status , key : item.name}})}} className={`${this.state.isSubLink.status && this.state.isSubLink.key === item.name && 'active'} has-arrow waves-effect waves-dark`}>
+                          <a href="javascript:void(0)" onClick={() => { this.setState({isSubLink: {status : (this.state.isSubLink.key !== item.name ) ? true  : !this.state.isSubLink.status , key : item.name}})}} className={`${this.state.isSubLink.status && this.state.isSubLink.key === item.name && 'active'} has-arrow waves-effect waves-dark`}>
                             <i className={item.icon} />
                             <span className='hide-menu'>{item.name}</span>
                           </a>

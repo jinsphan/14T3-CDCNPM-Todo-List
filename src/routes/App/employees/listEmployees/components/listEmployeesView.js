@@ -8,12 +8,14 @@ import PageTitle from '../../../../../components/Elements/PageTitle'
 export default class listEmployeesView extends Component {
 
     viewDetailEmpl = (empl) => {
+        this.props.viewingEmpl(empl)
         browserHistory.push({
             pathname : `/app/master/employees/detail/${empl.emplId}`,
             state : empl
         })
     }
     editEmpl = (empl) => {
+        this.props.viewingEmpl(empl)
         browserHistory.push({
             pathname : `/app/master/employees/edit-empl/${empl.emplId}`,
             state : empl
