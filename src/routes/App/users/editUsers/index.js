@@ -2,7 +2,7 @@
  * Created by minmin on 10/9/18.
  */
 export default (store) => ({
-    path : '/app/role/users/edit-users',
+    path : '/app/role/users/edit-user/:id',
     /*  Async getComponent is only invoked when route matches   */
     getComponent (nextState, cb) {
       /*  Webpack - use 'require.ensure' to create a split point

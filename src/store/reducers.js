@@ -5,6 +5,8 @@ import loginReducer from '../routes/Login/modules/login'
 
 import employees from '../routes/App/employees/modules/redux'
 import groupUsers from '../routes/App/groupUsers/modules/redux'
+import users from '../routes/App/users/modules/redux'
+import authen from './moduleAuthen/AuthRedux'
 import roles from '../routes/App/roles/modules/redux'
 export const makeRootReducer = (asyncReducers) => {
   return combineReducers({
@@ -14,6 +16,8 @@ export const makeRootReducer = (asyncReducers) => {
       employees,
       groupUsers,
       roles,
+      users,
+      authen,
     ...asyncReducers
   })
 }

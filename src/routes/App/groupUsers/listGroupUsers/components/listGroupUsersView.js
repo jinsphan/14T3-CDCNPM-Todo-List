@@ -4,6 +4,7 @@
 import React, { Component } from 'react';
 import ReactTable from 'react-table'
 import {browserHistory} from 'react-router'
+import swal from 'sweetalert'
 import PageTitle from '../../../../../components/Elements/PageTitle'
 export default class listGroupUsersView extends Component {
     deleteGr = (item) => {
@@ -78,7 +79,7 @@ export default class listGroupUsersView extends Component {
                                     },
                                     {
                                         Header : 'Ngày tạo ',
-                                        accessor: 'dateCreate ',
+                                        accessor: 'dateCreate',
                                     },
                                     {
                                         Header : 'Thao tác',

@@ -3,7 +3,8 @@ import thunk from 'redux-thunk'
 import { browserHistory } from 'react-router'
 import makeRootReducer from './reducers'
 import { updateLocation } from './site'
-
+import { persistStore, autoRehydrate } from 'redux-persist';
+import localForage from 'localforage';
 const createStore = (initialState = {}) => {
   // ======================================================
   // Middleware Configuration
@@ -30,6 +31,7 @@ const createStore = (initialState = {}) => {
     initialState,
     composeEnhancers(
       applyMiddleware(...middleware),
+        autoRehydrate(),
       ...enhancers
     )
   )
@@ -47,5 +49,13 @@ const createStore = (initialState = {}) => {
 
   return store
 }
-
+export const configPersist = (callback) => {
+    persistStore(
+        store,
+        {
+            storage: localForage,
+        },
+        callback,
+    );
+};
 export default createStore

@@ -7,12 +7,13 @@ class LoginView extends Component {
   constructor () {
     super();
     this.state = {
-      email:'admin@admin.com',
-      password: 'admin',
+      email:'truongvt10',
+      password: '12345',
       checkbox: false
     }
   }
   login = (event) => {
+    this.props.login(this.state.email,this.state.password)
     browserHistory.push('/app')
   };
 

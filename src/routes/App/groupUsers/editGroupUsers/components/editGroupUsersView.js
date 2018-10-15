@@ -9,9 +9,6 @@ import{ browserHistory } from 'react-router'
 export default class editGroupUsersView extends Component {
     constructor(props){
         super(props)
-        this.state = {
-            CheckAll : false
-        }
     }
     guidGenerator = () => {
         let S4 = () => {
@@ -67,12 +64,11 @@ export default class editGroupUsersView extends Component {
                                     </div>
                                 </div>
                                 <div className='col-sm-12 row'>
-                                    <input type="button" className="btn btn-success" onClick={()=>{this.setState({CheckAll : !this.state.CheckAll})}} value={this.state.CheckAll ? 'Bỏ chọn tất cả' : 'Chọn tất cả'}/>
 
                                     {
                                         listRoles.map((item,key)=>(
                                             <div className="col-md-3" key={key}>
-                                                <Checkbox name={item.idRole} label={item.name} defaultChecked={(viewingGr.roles.includes(item.idRole) || this.state.CheckAll)} className='radio'  />
+                                                <Checkbox name={item.idRole} label={item.name} defaultChecked={(viewingGr.roles.includes(item.idRole))} className='radio'  />
                                             </div>
                                         ))
                                     }

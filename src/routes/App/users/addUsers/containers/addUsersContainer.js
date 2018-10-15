@@ -4,14 +4,17 @@
 import React from 'react'
 import { connect } from 'react-redux'
 import addUsersView from '../components/addUsersView'
-// import { actionCreator } from '../actionPath'
+import { addUser } from '../../modules/action'
 
 const mapStateToProps = (state, ownProps) => ({
-    
+    listEmpl : state.employees.employees,
+    listGrUser : state.groupUsers.listGroupUser
 })
 
-const mapDispatchToProps = {
-    
+const mapDispatchToProps = dispatch => {
+    return {
+        addUser : item => dispatch(addUser(item))
+    }
 }
 
 export default connect(mapStateToProps, mapDispatchToProps)(addUsersView)

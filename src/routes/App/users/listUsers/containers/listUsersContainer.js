@@ -4,14 +4,17 @@
 import React from 'react';
 import { connect } from 'react-redux'
 import listUsersView from '../components/listUsersView'
-// import { actionCreator } from '../actionPath'
+import { deleteUser,viewingUser } from '../../modules/action'
 
 const mapStateToProps = (state, ownProps) => ({
-    
+    listUser : state.users.listUser
 })
 
-const mapDispatchToProps = {
-    
+const mapDispatchToProps = (dispatch)=>{
+    return{
+        deleteUser : item => dispatch(deleteUser(item)),
+        viewingUser : item => dispatch(viewingUser(item))
+    }
 }
 
 export default connect(mapStateToProps, mapDispatchToProps)(listUsersView)

@@ -5,7 +5,27 @@ import {VIEWING_GROUP_USER,ADD_GROUP_USER,UPDATE_GROUP_USER,DELETE_GROUP_USER} f
 import {remove,findIndex} from 'lodash'
 const initialState = {
   listGroupUser : [
-
+      {
+          dateCreate: "12-10-2018",
+          desc: "Người quản lí hệ thống. Có toàn quyền quyết định ",
+          id: "ce088e39-0b39-7de4-a59b-678ed34a74c8",
+          name: "Admin",
+          roles: ["00001", "00002", "00003", "00004", "00005", "00006", "00007", "00008", "00009"]
+      },
+      {
+          dateCreate: "12-10-2018",
+          desc: "Quản lí việc bán hàng của công ty",
+          id: "b13d4b82-0cdd-40da-2762-4bf320ef8699",
+          name: "Nhân viên bán hàng",
+          roles: []
+      },
+      {
+          dateCreate: "12-10-2018",
+          desc: "Quản lí việc mua hàng ",
+          id: "b7cb0e09-17b8-6826-987f-4123566ba5ba",
+          name: "Nhân viên mua hàng",
+          roles:["00001", "00002", "00003", "00004", "00005", "00006"]
+      }
   ],
     viewingGroupUser : {}
 };
