@@ -8,6 +8,7 @@ const Keys = {
 
 export const CacheService = {
     saveAuthData: (data) => {
+        console.log(data)
         localStorage.setItem(Keys.AUTH_DATA, JSON.stringify(data));
     },
 

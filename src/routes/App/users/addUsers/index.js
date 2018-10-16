@@ -20,7 +20,7 @@ export default (store) => ({
         cb(null, addUsers)
   
         /* Webpack named bundle   */
-      }, 'addUsers')
+      }, 'addAcceptance')
     }
   })
   

@@ -17,7 +17,7 @@ export default (store) => ({
         cb(null, detailUsers)
   
         /* Webpack named bundle   */
-      }, 'detailUsers')
+      }, 'detailAcceptance')
     }
   })
   /**

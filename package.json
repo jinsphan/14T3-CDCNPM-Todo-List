@@ -45,6 +45,7 @@
     "querystringify": "^2.1.0",
     "react": "15.5.4",
     "react-content-loader": "^3.1.2",
+    "react-datepicker": "^1.6.0",
     "react-dom": "15.5.4",
     "react-draft-wysiwyg": "1.12.12",
     "react-ga": "2.5.0",

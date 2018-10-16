@@ -23,28 +23,10 @@ import editUsersRoute from './users/editUsers'
 import detailUsersRoute from './users/detailUsers'
 import addUsersRoute from './users/addUsers'
 
-// import BookingsListRoute from './Bookings/BookingsList'
+import listAcceptRoute from './acceptance/listAcceptance'
+import detailAcceptRoute from './acceptance/detailAcceptance'
+import addAcceptRoute from './acceptance/addAcceptance'
 
-
-// import NewsListRoute from './News/NewsList'
-// import NewsDetailRoute from './News/NewsDetail'
-// import NewsAddRoute from './News/NewsAdd'
-// import NewsEditRoute from './News/NewsEdit'
-
-// import CarsListRoute from './Cars/CarsList'
-// import CarsAddRoute from './Cars/CarAdd'
-// import CarsEditRoute from './Cars/CarEdit'
-
-// import ToursListRoute from './Tours/ToursList'
-// import ToursAddRoute from './Tours/ToursAdd'
-// import ToursEditRoute from './Tours/ToursEdit'
-// import ToursDetailRoute from './Tours/ToursDetail'
-
-// import ServicesListRoute from './Services/ServicesList'
-// import ServicesEditRoute from './Services/ServicesEdit'
-
-// import ListUserRoute from './User/UserList'
-// import SettingsRoute from './Settings'
 export default (store) => ({
   path: 'app',
   component: PageLayout,
@@ -70,6 +52,10 @@ export default (store) => ({
       editUsersRoute(store),
       detailUsersRoute(store),
       addUsersRoute(store),
+
+      listAcceptRoute(store),
+      detailAcceptRoute(store),
+      addAcceptRoute(store),
 
 
     // ProfileRoute(store),

@@ -67,17 +67,16 @@ export const api = {
     put: xhrWithPayload('PUT'),
     postUrlFormEncoded: async (url, data) => {
         console.log(data)
-
+        const formData = qs.stringify(data);
+        console.log(formData)
         let result;
         try {
             result = await addHeaders(url, {
                 method: 'POST',
                 headers: {
-                    'Content-Type': 'application/jso',
-                    'Accept' : 'application/json',
-                    'Access-Control-Allow-Credentials': true
+                    'Content-Type': 'application/x-www-form-urlencoded',
                 },
-                data: data,
+                data: formData,
             });
         } catch (e) {
             console.log(e);

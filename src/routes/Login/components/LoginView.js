@@ -7,16 +7,25 @@ class LoginView extends Component {
   constructor () {
     super();
     this.state = {
-      email:'truongvt10',
+      email:'truongtv10',
       password: '12345',
       checkbox: false
     }
   }
   login = (event) => {
     this.props.login(this.state.email,this.state.password)
-    browserHistory.push('/app')
   };
+  componentWillMount () {
+      console.log(this.props.isLogin)
 
+      if(this.props.isLogin){
+          console.log(this.props.isLogin)
+          browserHistory.push('/app')
+      } else {
+          console.log('else',this.props.isLogin)
+          this.props.refreshToken()
+      }
+  }
   render () {
     return (
       <div>
@@ -69,5 +78,6 @@ class LoginView extends Component {
 
 LoginView.propTypes = {
   login: PropTypes.func.isRequired,
+    refreshToken: PropTypes.func.isRequired,
 }
 export default LoginView

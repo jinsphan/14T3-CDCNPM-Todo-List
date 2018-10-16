@@ -71,7 +71,7 @@ export const updateLocation = ({ dispatch }) => {
 // ------------------------------------
 const initialState = {
   location: browserHistory.getCurrentLocation(),
-  dropdownName: '',
+  dropdownName: '123',
   isShowNotification: false,
 }
 export default function locationReducer (state = initialState, action) {
