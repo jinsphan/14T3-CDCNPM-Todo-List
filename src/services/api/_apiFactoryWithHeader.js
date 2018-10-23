@@ -2,7 +2,6 @@ import axios from 'axios';
 import qs from 'querystringify';
 import {forIn} from 'lodash';
 import { BASE_URL } from '../../store/moduleAuthen/ServerConstant';
-
 const urlModifier = url => `${BASE_URL}/${url}`;
 
 let accessToken = null;
@@ -12,22 +11,32 @@ const setAccessToken = (token) => {
 };
 
 const addHeaders = (url, options) => {
+    console.log(options)
     const headers = {
-        Authorization: ``,
-        Accept: 'application/json',
+        // Accept: 'application/json',
         'content-type': 'application/json',
+        // 'Content-Type': 'application/x-www-form-urlencoded',
         ...options.headers,
     };
 
     if (accessToken) {
         headers.Authorization = `${accessToken}`;
+        console.log('headers',headers)
+        console.log('body',options.data)
+        return axios({ url: urlModifier(url), headers, ...options });
+    } else {
+        return axios({ url: urlModifier(url), headers, ...options });
+
     }
-    return axios({ url: urlModifier(url), headers, ...options });
 };
 
 const xhrWithPayload = method => (url, payload) => new Promise((resolve, reject) => addHeaders(url, {
     method,
+    // data: qs.stringify(payload),
     data: JSON.stringify(payload),
+    headers: {
+        // 'Content-Type': 'application/x-www-form-urlencoded',
+    },
 })
     .then((response) => {
         if (response.status === 204) {
@@ -74,6 +83,7 @@ export const api = {
             result = await addHeaders(url, {
                 method: 'POST',
                 headers: {
+                    Accept: 'application/json',
                     'Content-Type': 'application/x-www-form-urlencoded',
                 },
                 data: formData,

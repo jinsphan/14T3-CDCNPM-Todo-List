@@ -8,6 +8,7 @@ import { CacheService } from '../../services/CacheService';
 
 const initialState = {
     auth: false,
+    token: ''
 };
 
 export default (state = initialState, action) => {
@@ -15,12 +16,12 @@ export default (state = initialState, action) => {
         case GET_TOKEN:
             return state;
         case LOGIN_SUCCESS:
-            return { auth: true };
+            return { auth: true ,token : action.payload};
         case LOGIN_FAILURE:
             return { auth: false };
         case LOGOUT:
             CacheService.clearAuthData();
-            return { auth: false };
+            return { auth: false ,token : ''};
         default:
             return state;
     }

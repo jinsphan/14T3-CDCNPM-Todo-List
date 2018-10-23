@@ -7,6 +7,8 @@ import Sidebar from '../../components/Sidebar/Sidebar'
 import Header from '../../components/Header/Header'
 import Toasts from '../../components/Toast/Toasts'
 import {browserHistory} from 'react-router'
+import {CacheService} from '../../services/CacheService'
+import {setAccessToken} from '../../services/api/_apiFactoryWithHeader'
 import './PageLayout.scss'
 
 class AppLayout extends Component {
@@ -14,6 +16,10 @@ class AppLayout extends Component {
     super()
     this.setWrapperRef = this.setWrapperRef.bind(this)
     this.resetDropdown = this.resetDropdown.bind(this)
+      if (CacheService.getAuthData()) {
+          setAccessToken(CacheService.getAuthData().Token);
+      }
+
   }
   componentWillMount () {
 
