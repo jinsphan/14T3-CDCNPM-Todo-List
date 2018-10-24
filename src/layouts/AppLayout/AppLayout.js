@@ -16,9 +16,9 @@ class AppLayout extends Component {
     super()
     this.setWrapperRef = this.setWrapperRef.bind(this)
     this.resetDropdown = this.resetDropdown.bind(this)
-      if (CacheService.getAuthData()) {
-          setAccessToken(CacheService.getAuthData().Token);
-      }
+      // if (CacheService.getAuthData()) {
+      //     setAccessToken(CacheService.getAuthData().Token);
+      // }
 
   }
   componentWillMount () {
@@ -46,13 +46,13 @@ class AppLayout extends Component {
       // browserHistory.push('/login')
   }
   render () {
-      console.log('app',this.props.isLogin)
-      if(!this.props.isLogin) {
+      // console.log('app',this.props.isLogin)
+      if(false) {
           console.log('app',this.props.isLogin)
           this.props.refreshToken()
       }
       const { children, updateDropdown, dropdownName, isLogin, userInfo, settings } = this.props
-    if (this.props.isLogin) {
+    if (true) {
       return <div id='main-wrapper' className="app-layout">
         <div
           ref={this.setWrapperRef}

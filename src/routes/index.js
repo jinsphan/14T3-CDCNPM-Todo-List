@@ -4,13 +4,14 @@ import AppRoute from './App'
 import PageNotFoundRoute from './PageNotFound'
 export const createRoutes = (store) => (
     {
-      path        : '/',
-      indexRoute  : LoginRoute(),
+      path        : '',
+      indexRoute  : AppRoute(),
       childRoutes : [
         // GuestRoute(),
-        LoginRoute(),
         AppRoute(),
-        PageNotFoundRoute(),
+          LoginRoute(),
+
+          PageNotFoundRoute(),
       ]
     }
 )

@@ -13,9 +13,8 @@ const setAccessToken = (token) => {
 const addHeaders = (url, options) => {
     console.log(options)
     const headers = {
-        // Accept: 'application/json',
+        Accept: 'application/json',
         'content-type': 'application/json',
-        // 'Content-Type': 'application/x-www-form-urlencoded',
         ...options.headers,
     };
 
@@ -32,11 +31,7 @@ const addHeaders = (url, options) => {
 
 const xhrWithPayload = method => (url, payload) => new Promise((resolve, reject) => addHeaders(url, {
     method,
-    // data: qs.stringify(payload),
-    data: JSON.stringify(payload),
-    headers: {
-        // 'Content-Type': 'application/x-www-form-urlencoded',
-    },
+    data: payload,
 })
     .then((response) => {
         if (response.status === 204) {
@@ -75,18 +70,15 @@ export const api = {
     post: xhrWithPayload('POST'),
     put: xhrWithPayload('PUT'),
     postUrlFormEncoded: async (url, data) => {
-        console.log(data)
-        const formData = qs.stringify(data);
-        console.log(formData)
         let result;
         try {
             result = await addHeaders(url, {
                 method: 'POST',
                 headers: {
                     Accept: 'application/json',
-                    'Content-Type': 'application/x-www-form-urlencoded',
+                    'Content-Type': 'application/json',
                 },
-                data: formData,
+                data,
             });
         } catch (e) {
             console.log(e);
