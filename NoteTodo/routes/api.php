@@ -22,10 +22,14 @@ Route::group([
 ],function (){
   //user
   Route::post('register','AuthController@register');
-
+  Route::post('login','AuthController@login');
   //todo
   Route::get('todo','TodoController@index');
+  // Route::get('todo/{$id}','TodoController@show');
   Route::post('todo','TodoController@store');
+  Route::put('todo/{id}','TodoController@update');
+  Route::delete('todo/{id}','TodoController@destroy');
+
   // Route::post('todo',function(Request $request){
   //   $test1=$request->input('user_id');
   //   $test2=$request->input('tittle');

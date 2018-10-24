@@ -70,17 +70,7 @@ class TodoController extends ApiController
     //     return $rules;
     // }
     ////
-    public function dataFilter($data){
-      echo 'test3';
-        $pureData = [];
-        $pureData['tittle'] =  $data->tittle;
-        $pureData['color'] =  $data->color;
-        $pureData['description'] =  $data->description;
-        $pureData['due_day'] =  $data->due_day;
-        $pureData['user_id'] =  $data->user_id;
 
-        return $pureData;
-    }
 
     /////
 
@@ -123,7 +113,24 @@ class TodoController extends ApiController
      */
     public function update(Request $request, $id)
     {
-        //
+      $todo=Todo::find($id);
+      $messages = $this->initMessage();
+      $validator = Validator::make($request->all(), [
+        'tittle' => 'required|String|max:255',
+      ], $messages);
+      if ($validator->fails()) {
+        return $this->setStatusCode(400)->setErrors($validator->messages())->withError('error');
+      } else {
+        try {
+          echo 'validator success';
+            $todo['tittle']=$request->tittle;
+            $todo->save();
+            return $this->withSuccess('Updated', $todo);
+        } catch (\Exception $e) {
+          echo 'validator but try catch fail';
+            return $this->setStatusCode(500)->withError($e->getMessage());
+        }
+      }
     }
 
     /**
@@ -134,6 +141,25 @@ class TodoController extends ApiController
      */
     public function destroy($id)
     {
-        //
+      $todo=Todo::find($id);
+      $messages = $this->initMessage();
+        try {
+            $todo->delete();
+            return $this->withSuccess('Deleted', $todo);
+        } catch (\Exception $e) {
+
+            return $this->setStatusCode(500)->withError($e->getMessage());
+      }
+    }
+    public function dataFilter($data){
+      echo 'test3';
+        $pureData = [];
+        $pureData['tittle'] =  $data->tittle;
+        $pureData['color'] =  $data->color;
+        $pureData['description'] =  $data->description;
+        $pureData['due_day'] =  $data->due_day;
+        $pureData['user_id'] =  $data->user_id;
+
+        return $pureData;
     }
 }
