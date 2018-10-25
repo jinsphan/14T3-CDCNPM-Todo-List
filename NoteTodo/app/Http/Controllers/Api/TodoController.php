@@ -90,7 +90,12 @@ class TodoController extends ApiController
      */
     public function show($id)
     {
-        //
+        $todo=Todo::find($id);
+        if($todo){
+          $todo->created=$todo->created_at->format('d M Y');
+          $todo->user;
+        }
+        return $this->withSuccess('result',$todo);
     }
 
     /**

@@ -25,7 +25,7 @@ Route::group([
   Route::post('login','AuthController@login');
   //todo
   Route::get('todo','TodoController@index');
-  // Route::get('todo/{$id}','TodoController@show');
+  Route::get('todo/{id}','TodoController@show');
   Route::post('todo','TodoController@store');
   Route::put('todo/{id}','TodoController@update');
   Route::delete('todo/{id}','TodoController@destroy');
