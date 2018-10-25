@@ -17,8 +17,7 @@ class TodoController extends ApiController
      */
     public function index()
     {
-        $limit = request()->limit ?: 10;
-        $todo=Todo::orderBy('created_at','desc')->paginate($limit);
+        $todo=Todo::orderBy('created_at','desc');
         foreach ($todo as $item) {
           $item->created=$item->created_at->format('d M Y');
         }
@@ -52,12 +51,10 @@ class TodoController extends ApiController
         return $this->setStatusCode(400)->setErrors($validator->messages())->withError('error');
       } else {
         try {
-          echo 'validator success';
             $data = $this->dataFilter($request);
             $todo = Todo::create($data);
             return $this->withSuccess('Stored', $todo);
         } catch (\Exception $e) {
-          echo 'validator but try catch fail';
             return $this->setStatusCode(500)->withError($e->getMessage());
         }
       }
@@ -95,7 +92,7 @@ class TodoController extends ApiController
           $todo->created=$todo->created_at->format('d M Y');
           $todo->user;
         }
-        return $this->withSuccess('result',$todo);
+        return $this->withSuccess('show',$todo);
     }
 
     /**
@@ -127,7 +124,6 @@ class TodoController extends ApiController
         return $this->setStatusCode(400)->setErrors($validator->messages())->withError('error');
       } else {
         try {
-          echo 'validator success';
             $todo['title']=$request->title;
             $todo['description']=$request->description;
             if ($request->color) {
@@ -139,7 +135,6 @@ class TodoController extends ApiController
             $todo->save();
             return $this->withSuccess('Updated', $todo);
         } catch (\Exception $e) {
-          echo 'validator but try catch fail';
             return $this->setStatusCode(500)->withError($e->getMessage());
         }
       }
@@ -157,21 +152,19 @@ class TodoController extends ApiController
       $messages = $this->initMessage();
         try {
             $todo->delete();
-            return $this->withSuccess('Deleted', $todo);
+            return $this->withSuccess('Deleted', null);
         } catch (\Exception $e) {
 
             return $this->setStatusCode(500)->withError($e->getMessage());
       }
     }
     public function dataFilter($data){
-      echo 'test3';
         $pureData = [];
         $pureData['title'] =  $data->title;
         $pureData['color'] =  $data->color;
         $pureData['description'] =  $data->description;
         $pureData['due_day'] =  $data->due_day;
         $pureData['user_id'] =  $data->user_id;
-
         return $pureData;
     }
 }
