@@ -1,0 +1,34 @@
+.side-bar{
+  border-left: 1px solid rgba(204,204,204,0.5);
+  padding: 0px 40px;
+  margin-bottom: 40px;
+  a{
+    color: #807e7d;
+    &:hover{
+      color: #15804d;
+    }
+  }
+  ul{
+    list-style: none;
+    padding-left: 0px;
+    li{
+      padding: 20px 0px;
+      border-bottom: solid 1px rgba(128,126,125,0.15);
+      i{
+        color: rgba(37, 36, 36, 0.15);
+        font-size: 18px;
+        margin-right: 10px;
+      }
+      a{
+        color: #000000;
+        &:hover{
+          color: #15804d;
+        }
+      }
+      &:last-child{
+        border: none;
+      }
+    }
+
+  }
+}

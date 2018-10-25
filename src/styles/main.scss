@@ -1,0 +1,113 @@
+@import 'base';
+@import url('https://fonts.googleapis.com/css?family=Roboto');
+@import url('https://fonts.googleapis.com/css?family=Roboto+Condensed');
+/*
+Template Name: Admin Template
+Author: Niravjoshi / Wrappixel
+File: scss
+*/
+
+@import 'variable';
+@import 'mixin';
+// @import '_cmn';
+//Colors
+@import 'colors/default';
+@import 'colors/green';
+@import 'colors/megna';
+@import 'colors/purple';
+@import 'colors/red';
+@import 'colors/blue';
+@import 'colors/blue-dark';
+@import 'colors/default-dark';
+@import 'colors/green-dark';
+@import 'colors/red-dark';
+@import 'colors/megna-dark';
+@import 'colors/purple-dark';
+
+
+// Import Bootstrap source files
+@import 'bootstrap/scss/bootstrap.scss';
+// Import Carousel Slick
+
+//This is for the icons
+@import './icons/font-awesome/css/font-awesome.min.css';
+@import './icons/simple-line-icons/css/simple-line-icons.css';
+@import './icons/weather-icons/css/weather-icons.min.css';
+@import './icons/themify-icons/themify-icons.css';
+@import './icons/flag-icon-css/flag-icon.min.css';
+@import "./icons/material-design-iconic-font/css/materialdesignicons.min.css";
+
+
+//This is the core files
+
+@import 'core/core';
+@import 'widgets/widgets';
+@import 'responsive';
+
+//This is the files pages
+@import "pages/user-card";
+//This is for react table
+
+@import 'react-table';
+@import 'dropify';
+
+
+//In This scss you can write your scss
+@import 'custom';
+
+// Some best-practice CSS that's useful for most apps
+// Just remove them if they're not what you want
+html {
+  box-sizing: border-box;
+}
+
+html,
+body {
+  margin: 0;
+  padding: 0;
+  height: 100%;
+}
+
+*,
+*:before,
+*:after {
+  box-sizing: inherit;
+}
+p{
+  font-size: $font-size-base;
+}
+
+.guest{
+  font-family: 'Roboto', sans-serif !important;
+  h1{ font-size: $h1-font-size}
+  h2{ font-size: $h2-font-size}
+  h3{ font-size: $h3-font-size}
+  h4{ font-size: $h4-font-size}
+  h5{ font-size: $h5-font-size}
+  h6{ font-size: $h6-font-size}
+  h1,
+  h2,
+  h3,
+  h4,
+  h5,
+  h6,
+  p,
+  a {
+    font-family: 'Roboto', sans-serif !important;
+
+  }
+}
+.app-layout{
+  font-family: 'Roboto', sans-serif !important;
+  h1,
+  h2,
+  h3,
+  h4,
+  h5,
+  h6,
+  p,
+  a {
+    font-family: 'Roboto', sans-serif !important;
+
+  }
+}

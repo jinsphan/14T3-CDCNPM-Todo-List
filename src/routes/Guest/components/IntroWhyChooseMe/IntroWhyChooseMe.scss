@@ -1,0 +1,60 @@
+@import "../../../../styles/variable";
+.introduce{
+
+  p{
+    line-height: 2;
+  }
+  button{
+    background-color: $background-guest;
+    border: 1px solid $border-color-base-guest;
+    color: #fff;
+    font-size: $h5-font-size;
+  }
+  .line-left{
+    border-color: $border-color-base-guest;
+    border-left-width: 1px;
+    border-left-style: dashed;
+  }
+  &-item{
+    position: relative;
+    margin-bottom: 30px;
+    height: 60px;
+    &:last-child{
+      margin-bottom: 0px;
+
+    }
+  }
+  &-description{
+    padding: 15px 30px;
+    line-height: $line-height-base;
+    color: $text-color-base-guest;
+    h4{
+      line-height: 25px;
+    }
+  }
+  &-box-icon{
+    text-align: center;
+    width: 60px;
+    height: 60px;
+    font-size: 20px;
+    background: $red-guest;
+    color: $text-alt-guest;
+    border: solid 2px $yellow-guest;
+    border-radius: 50%;
+    position: absolute;
+    left: -40px;
+    i{
+      margin: 20px auto;
+    }
+  }
+}
+@media (max-width: 768px) {
+  .introduce-description{
+    padding-top: 0px;
+    padding-bottom: 0px;
+    padding-left: 30px;
+    h4{
+      line-height: 30px;
+    }
+  }
+}

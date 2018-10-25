@@ -1,0 +1,31 @@
+// In this scss you can overwrite all our scss, we suggested you to add your scss into this, so whenever the update comes it will not affect your code.
+.crs-item {
+  p {
+    text-align: center;
+    padding-top: 20px;
+  }
+}
+
+.swal-button swal-button--confirm {
+  box-shadow: none !important;
+}
+.error-box {
+  height: 100%;
+  position: fixed;
+  background: url(./images/background/error-bg.jpg) no-repeat center center #fff;
+  width: 100%; }
+.error-box .footer {
+  width: 100%;
+  left: 0px;
+  right: 0px; }
+
+.error-body {
+  padding-top: 5%; }
+.error-body h1 {
+  font-size: 210px;
+  font-weight: 900;
+  text-shadow: 4px 4px 0 #fff, 6px 6px 0 #343a40;
+  line-height: 210px; }
+.white-box{
+  background-color: #fff;
+}

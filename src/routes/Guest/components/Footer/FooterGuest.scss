@@ -1,0 +1,111 @@
+@import "../../../../styles/variable";
+.footer-bar{
+  background: $red-guest none repeat center top;
+  //border-top: solid 1px $border-color-base-guest;
+  color: $text-alt-guest;
+  line-height: $line-height-base;
+  ul{
+    list-style: none;
+    padding: 0px;
+  }
+  a{
+    color: $text-alt-guest;
+    &:hover{
+      color: $yellow-guest;
+    }
+  }
+  &__top{
+    padding-top: 50px;
+    padding-bottom: 10px;
+  }
+  &__info{
+    hr{
+      margin-top: 1rem;
+      border-top: 1px solid $text-alt-guest;
+    }
+    i{
+      padding-right: 15px;
+    }
+  }
+  &__news{
+    .table-cell{
+      display: table-cell;
+      vertical-align: top;
+      width: 60px;
+      a{
+        margin: 5px 20px 5px 0;
+        font-size: 0;
+        line-height: 0;
+        img{
+          border-radius: 50%;
+          margin: 5px 20px 5px 0;
+
+        }
+      }
+    }
+    .post-content{
+      display: table-cell;
+      vertical-align: top;
+    }
+  }
+  &__service{
+    ul{
+      li{
+        border-style: solid;
+        border-width: 1px;
+        border-color: $text-alt-guest;
+        border-left: none;
+        border-right: none;
+        border-bottom: none;
+        margin: 9px 0 0;
+        padding: 10px 0 0;
+        &:first-child{
+          border: none;
+        }
+      }
+    }
+    i{
+      width: 8px;
+      height: 8px;
+      padding: 2px 2px;
+      border-radius: 2px;
+      font-size: 14px;
+      margin-right: 5px;
+    }
+    a{
+      padding-left: 10px;
+    }
+  }
+  &__bottom{
+    background: $background-guest none repeat center top;
+    font-size: 14px;
+    line-height: 28px;
+    color: $text-color-base-guest;
+    border-top: solid 1px $border-color-base-guest;
+    min-height: 30px;
+    text-align: right;
+    height: 60px;
+    padding: 15px 0px;
+    a{
+      color: $text-color-base-guest;
+      padding-left: 20px;
+      i{
+        margin: 0 10px;
+        color: $red-guest;
+      }
+    }
+    .container{
+
+      align-items: center;
+    }
+  }
+  &__title{
+    text-transform: uppercase;
+    font-size: 16px;
+    line-height: 25px;
+    font-weight: 600;
+    margin-bottom: 15px;
+    clear: both;
+    color: $text-alt-guest;
+  }
+}

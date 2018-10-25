@@ -1,0 +1,36 @@
+[
+  {
+    "title" : "CHO THUÊ XE HỢP ĐỒNG",
+    "params" : "hop-dong",
+    "reason": "Tại sao nhu cầu thuê xe dài hạn ngày càng tăng cao?",
+    "description": "Đáp ứng nhu cầu thuê xe của doanh nghiệp, cá nhân sử dụng xe trong một thời gian nhất định cho các dự án hay công việc. TTB mong muốn đem tới giải pháp kinh tế hiệu quả với xe ô tô với chất lượng và tài xế chuyên nghiệp, an toàn.",
+    "content": [
+      "- Bạn sẽ sở hữu thương hiệu xe đã chọn phù hợp với màu sắc, kiểu dáng và thông số kỹ thuật.",
+      "- Lái xe thân thiện, thông thuộc mọi tuyến đường, đưa đón bạn tân nơi, chính xác và an toàn.",
+      "- Giảm chi phí ( Chí phí thuê xe hàng tháng giảm đáng kể so với chi phí để mua xe riêng như tiền mua xe, phí bảo hiểm, phí bảo trì đường bộ, phí đăng kiểm, phí bảo dưỡng hàng tháng, phí gửi xe, lương tài xế…).",
+      "- Đội ngũ nhân viên tư vấn luôn sẵn lòng phục vụ 24/7, tư vấn, báo giá hay giải quyết sự cố.",
+      "- Thủ tục thuê xe nhanh chóng, đơn giản."
+      ]
+  },
+  {
+    "title" : "CHO THUÊ XE DU LỊCH",
+    "params" : "du-lich",
+    "reason": "Lợi ích:",
+
+    "description": "Đem đến cho quý khách những trải nghiệp tuyệt với trên những chuyến đi là cách mà chúng tôi cung cấp dịch vụ cho thuê xe du lịch TTB. An toàn và thân thiện là cảm nhận bạn sẽ được tận hưởng trong suốt hành trình của mình.",
+    "content": ["- Làm chủ thời gian và hành trình di chuyển.","- An toàn và thoải mái tận hưởng chuyến du lịch của mình một cách tự nhiên nhất","- Được phục vụ chu đáo, yên tâm trên mỗi chặng đường bởi đội ngũ lái xe của TTB luôn giàu kinh nghiệm."]
+
+  },
+  {
+    "title" : "CHO THUÊ XE TỰ LÁI",
+    "params" : "tu-lai",
+    "reason": "Lợi ích:",
+    "rules" : "Điều kiện thuê xe tự lái:",
+    "description": "Mang tới sự tiện lợi và thoải mái nhất cho khách hàng trong việc lưu thông cũng như chủ động về thời gian với dịch vụ thuê xe tư lái TTB.",
+    "content": ["- Làm chủ thời gian và hành trình di chuyển","- Chủ động được thời gian, lô trình, tuyến đường và các kế hoạch của mình.","- Thủ tục nhanh chóng"],
+    "descriptionCompany": "Khách hàng là công ty",
+    "contentCompany": ["+ 01 Giấy phép đăng ký kinh doanh photo","+ 01 CMND","+ 01 Giấy phép lái xe ô tô","+ 01 Hộ khẩu","+ 01 Xe máy và giấy tờ theo xe"],
+    "descriptionSingle": "Khách hàng là cá nhân",
+    "contentSingle": ["+ 01 CMND","+ 01 Giấy phép lái xe ô tô","+ 01 Hộ khẩu","+ 01 Xe máy và giấy tờ theo xe"]
+  }
+]

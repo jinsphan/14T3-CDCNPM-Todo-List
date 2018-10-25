@@ -1,0 +1,59 @@
+@import "../../../../styles/variable";
+.intro-thuexe{
+  background-color: $background-guest;
+  button{
+    color: $text-alt-guest;
+    background-color: $red-guest;
+  }
+}
+.header-content{
+  h1{
+    color: $text-color-base-guest;
+  }
+}
+.header-line{
+  width:50%;
+  height: 30px;
+  margin: auto;
+  margin-bottom: 60px;
+  content: "";
+  border-bottom : solid 2px $border-color-base-guest;
+  .icon-line{
+    position: relative;
+    margin: 0 auto;
+    left: 0;
+    border-color: $border-color-base-guest;
+    border: solid 2px;
+    background: $background-guest;
+    color: $text-color-base-guest;
+    font-size: 30px;
+    text-align: center;
+    line-height: 55px;
+    i{
+      margin: 0;
+      color: $text-color-base-guest;
+    }
+  }
+}
+.intro-content{
+  p{
+    font-size: $font-size-base;
+    line-height: $line-height-base;
+  }
+}
+.cam-ket{
+  background: $background-guest;
+  &__title{
+    color: $text-color-base-guest;
+    padding: 20px 0px;
+    margin-bottom: 30px;
+  }
+  img{
+    margin-bottom: 20px;
+  }
+  button{
+    background-color: $red-guest;
+    color: $text-alt-guest;
+    margin: 30px auto;
+  }
+}

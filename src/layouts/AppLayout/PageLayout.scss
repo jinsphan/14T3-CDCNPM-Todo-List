@@ -1,0 +1,15 @@
+.page-layout__viewport {
+  padding-top: 4rem;
+}
+.page-layout__nav-item--active {
+  font-weight: bold;
+  text-decoration: underline;
+}
+.bg-outside{
+  position: fixed;
+  top: 0;
+  bottom: 0;
+  left: 0;
+  right: 0;
+  z-index: 21;
+}

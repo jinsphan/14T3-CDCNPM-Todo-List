@@ -1,0 +1,109 @@
+@import "../../../../styles/variable";
+
+.introduce{
+  p{
+    line-height: 2;
+    text-align: justify;
+    strong{
+      color: $red-guest;
+    }
+    a{
+      color: $red-guest;
+      &:hover{
+        color: $yellow-guest;
+      }
+    }
+  }
+  button{
+    background-color: $red-guest;
+    border: 1px solid $yellow-guest;
+    color: $text-alt-guest;
+    font-size: 20px;
+  }
+  .line-left{
+    border-color: $border-color-base-guest;
+    border-left-width: 1px;
+    border-left-style: dashed;
+  }
+  &-item{
+    position: relative;
+    margin-bottom: 30px;
+    height: 60px;
+    &:last-child{
+      margin-bottom: 0px;
+
+    }
+  }
+}
+.list-product__home{
+  .top-button {
+    button{
+      border: solid 1px $red-guest;
+      color: $red-guest;
+      background-color: $text-alt-guest;
+      &:hover{
+        border: solid 1px $red-guest;
+        background-color: $red-guest;
+        color: $text-alt-guest;
+      }
+      &:active{
+        border: solid 1px $red-guest;
+        background-color: $red-guest;
+        color: $text-alt-guest;
+      }
+    }
+  }
+  button{
+    margin-bottom: 10px;
+    border-radius: 1.5rem;
+  }
+  .list-product-btn__bottom{
+    background-color: $red-guest;
+    border: none;
+    color: #ffffff;
+  }
+  .product-item{
+    border: solid 1px $border-color-base-guest;
+    border-radius: 5px;
+    strong{
+      font-weight: 700;
+    }
+    button{
+      background-color: $red-guest;
+      border-radius: 5px;
+      color :$text-alt-guest;
+      border: none;
+      &:active{
+        background-color: $yellow-guest!important;
+      }
+    }
+    &__info{
+      list-style: none;
+      padding: 15px 0px;
+      li{
+        padding: 5px 0px;
+        i{
+          font-size: 16px;
+          color: $text-color-base-guest;
+          margin-right: 15px;
+        }
+        strong{
+          padding-right: 5px;
+        }
+      }
+    }
+  }
+}
+.home-view{
+  .img-gif{
+    padding-top: 90px;
+    text-align: center;
+    img{
+
+    }
+  }
+  .box-hotline{
+    padding-left: 40px;
+    padding-right: 40px;
+  }
+}

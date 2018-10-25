@@ -1,0 +1,47 @@
+[
+  {
+    "name": "Bảng điều khiển",
+    "link": "/app",
+    "icon": "icon-speedometer"
+  },
+  {
+    "name": "Master Data",
+    "link": "/app/master",
+    "icon": "icon-target",
+    "hasArrow": true,
+    "subLink": [
+      {
+        "name": "Sản phẩm",
+        "key": "product"
+      },
+      {
+        "name": "Xe",
+        "key": "car"
+      },
+      {
+        "name": "Nhân viên",
+        "key": "employees"
+      }
+    ]
+  },
+  {
+    "name": "Phân Quyền",
+    "link": "/app/role",
+    "icon": "icon-target",
+    "hasArrow": true,
+    "subLink": [
+      {
+        "name": "Nhóm người dùng",
+        "key": "group-user"
+      },
+      {
+        "name": "Người dùng",
+        "key": "users"
+      },
+      {
+        "name": "Quyền",
+        "key": "roles"
+      }
+    ]
+  }
+]

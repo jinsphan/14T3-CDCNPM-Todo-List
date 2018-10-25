@@ -1,0 +1,225 @@
+@import '../../../../styles/variable';
+header{
+  color: $text-alt-guest;
+  a{
+    color: $text-alt-guest;
+    &:hover{
+      color: $yellow-guest;
+    }
+  }
+  .header-info{
+    background-color: $background-guest;
+    padding: 10px 0px;
+    a{
+      color: black;
+    }
+    &__logo{
+      position: absolute;
+      width: auto;
+      height: 140px;
+      top: -45px
+    }
+    &__email{
+      display: inline-flex;
+      margin-right: 15px;
+      i{
+        font-size: $h3-font-size;
+        color: $red-guest;
+
+      }
+    }
+    &__phone{
+      display: inline-flex;
+      margin-right: 15px;
+      i{
+        font-size: $h3-font-size;
+        color: $red-guest;
+
+      }
+    }
+    &__fb{
+      display: inline-flex;
+      margin-right: 15px;
+      a{
+        color: #4267b2;
+      }
+      i{
+        font-size: $h3-font-size;
+        margin-left: 10px;
+        color: #4267b2;
+      }
+    }
+    &__right{
+      color: $text-color-base-guest;
+      text-align: right;
+      padding: 10px 0px;
+      i{
+        margin: 0px 10px;
+      }
+    }
+  }
+  .header-menu{
+    background-color: $red-guest;
+    color : $text-alt-guest;
+    padding: 0px;
+    font-weight: 600;
+    nav{
+      padding: 0px;
+    }
+    .navbar-nav{
+      width: 100%;
+      .nav-item{
+        align-items: center;
+        align-content: center;
+        padding: 1rem 1.5rem;
+        margin: 0px auto;
+        font-size: $h6-font-size;
+        font-weight: 600;
+        text-transform: uppercase;
+        &:last-child{
+          border: none;
+        }
+      }
+      .dropdown{
+        .dropdown-menu{
+          border-radius: 0px;
+          top: 98%;
+          .dropdown-item{
+            font-weight: 600;
+            &:hover{
+              a{
+                color: $yellow-guest;
+              }
+            }
+          }
+        }
+      }
+    }
+  }
+}
+@media(max-width:768px) {
+  header{
+    a{
+      color: $text-color-base-guest;
+      &:hover{
+        color: $red-guest;
+      }
+    }
+    .header-menu__scroll{
+      display: none;
+    }
+    .header-menu{
+      .header-menu-mobile__button{
+        font-size: $h1-font-size;
+        color: $text-alt-guest;
+        font-weight: 600;
+      }
+      .navbar-nav {
+        display: block;
+        padding: 0px;
+        .header-menu__close{
+          position: absolute;
+          top: 0px;
+          right: 0px;
+          padding: 10px 20px;
+          background-color: $red-guest;
+          color: $text-alt-guest;
+        }
+        .active {
+          color: $red-guest;
+        }
+        .nav-item{
+          border: none;
+          display: block;
+        }
+      }
+      .dropdown{
+        .dropdown-menu.show{
+          display: inline-block;
+          width: 100%;
+          top: 100%;
+          .dropdown-item{
+            a{
+              color: $text-color-base-guest;
+            }
+          }
+        }
+      }
+    }
+    .scroll-menu-button{
+      font-size: $h1-font-size;
+      color: $text-alt-guest;
+      font-weight: 600;
+      display: none;
+      position: fixed;
+      right: 0px;
+      top: 30px;
+      padding: 15px;
+      background-color: red;
+      z-index: 9999;
+      line-height: 1;
+      opacity: 0.5;
+      border-radius: 5px;
+    }
+    .header-menu__mobile{
+      padding: 0px;
+      margin: 0px;
+      display: none;
+      top: 0px;
+      bottom: 0px;
+      left: 0px;
+      right: 0px;
+      z-index: 10000;
+      background-color: $background-guest;
+      position: fixed;
+    }
+  }
+
+}
+@media(min-width:769px) {
+  header{
+    .scroll-menu-button{
+      display: none;
+    }
+    .header-menu__scroll{
+      display: none;
+      position: fixed;
+      top:0;
+      right: 0;
+      left: 0;
+      z-index: 9999;
+    }
+    .header-menu{
+      .header-menu-mobile__button{
+        display: none;
+      }
+      .navbar-nav {
+        .header-menu__close{
+          display: none;
+        }
+        .active {
+          background-color: $background-guest;
+        }
+      }
+      .dropdown{
+        .dropdown-item{
+          a {
+            color: $text-color-base-guest;
+          }
+        }
+        &:hover{
+          .dropdown-menu{
+            display: block;
+          }
+        }
+      }
+    }
+  }
+}
+
+.hidden {
+  display: none!important;
+}
+.show{
+  display: block!important;
+}

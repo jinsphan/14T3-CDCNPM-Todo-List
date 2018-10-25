@@ -1,0 +1,30 @@
+@import "../../../../styles/variable";
+.form-register{
+  background-color: $yellow-guest;
+  border: none;
+  border-radius: 1em;
+  padding: 20px;
+  width: 100%;
+  color: $text-color-base-guest;
+  input{
+    padding: .2rem .75rem;
+  }
+  select{
+    height: calc(2rem + 2px)!important;
+  }
+  .form-group{
+    margin-bottom: 1rem;
+  }
+  input[type=submit] {
+    background-color: $red-guest;
+    //border: 1px solid ;
+    border: none!important;
+    color: $text-alt-guest;
+  }
+  .error{
+    .form-control{
+      border: solid 2px $red-guest;
+      box-sizing: border-box;
+    }
+  }
+}
