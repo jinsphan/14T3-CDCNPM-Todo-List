@@ -8,7 +8,6 @@ export default class Note extends Component {
         isEdit : this.props.data.isNew ,
     }
     delete = (id) => {
-
         if (this.props.delete) {
             this.props.delete(id)
         }
@@ -38,7 +37,6 @@ export default class Note extends Component {
             formData[field.name] = field.value
         }
         formData.id= data.id
-        console.log(formData)
         this.setState({
             isEdit: false
         })
@@ -63,7 +61,7 @@ export default class Note extends Component {
                                         className="form-control card-text text-light "
                                         defaultValue={data.description}
                                         rows={3}
-                                        name="body"
+                                        name="description"
                                         onKeyDown={e=>{this.onKeyDown(e)}}
                                     />
                                 </div>
