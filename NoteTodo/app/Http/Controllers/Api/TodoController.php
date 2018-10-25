@@ -81,7 +81,7 @@ class TodoController extends ApiController
           $todo->created=$todo->created_at->format('d M Y');
           $todo->user;
         }
-        return $this->withSuccess('result',$todo);
+        return $this->withSuccess('show',$todo);
     }
 
     /**
@@ -141,7 +141,11 @@ class TodoController extends ApiController
       $messages = $this->initMessage();
         try {
             $todo->delete();
+<<<<<<< HEAD
             return $this->withSuccess('Deleted',null);
+=======
+            return $this->withSuccess('Deleted', null);
+>>>>>>> vuong_token
         } catch (\Exception $e) {
 
             return $this->setStatusCode(500)->withError($e->getMessage());
@@ -154,7 +158,6 @@ class TodoController extends ApiController
         $pureData['description'] =  $data->description;
         $pureData['due_day'] =  $data->due_day;
         $pureData['user_id'] =  $data->user_id;
-
         return $pureData;
     }
 }
