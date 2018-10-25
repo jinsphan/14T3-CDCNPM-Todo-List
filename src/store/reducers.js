@@ -1,6 +1,7 @@
 import { combineReducers } from 'redux'
 import toasts from './toasts'
 import site from './site'
+import todos from "./todos";
 
 import authen from './moduleAuthen/AuthRedux'
 export const makeRootReducer = (asyncReducers) => {
@@ -8,6 +9,7 @@ export const makeRootReducer = (asyncReducers) => {
       toasts,
       site : site,
       authen,
+      todos,
     ...asyncReducers
   })
 }

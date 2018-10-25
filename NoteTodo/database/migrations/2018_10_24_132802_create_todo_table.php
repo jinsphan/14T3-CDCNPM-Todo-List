@@ -16,7 +16,7 @@ class CreateTodoTable extends Migration
         Schema::create('todo', function (Blueprint $table) {
             $table->increments('id');
             $table->integer('user_id')->unsigned();
-            $table->string('tittle');
+            $table->string('title');
             $table->string('color')->nullable();
             $table->longText('description')->nullable();
             $table->timestamp('due_day')->nullable();

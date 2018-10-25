@@ -46,7 +46,7 @@ class TodoController extends ApiController
       // $rules = $this->initRule();
       $messages = $this->initMessage();
       $validator = Validator::make($request->all(), [
-        'tittle' => 'required|String|max:255',
+        'title' => 'required|String|max:255',
       ], $messages);
       if ($validator->fails()) {
         return $this->setStatusCode(400)->setErrors($validator->messages())->withError('error');
@@ -66,7 +66,7 @@ class TodoController extends ApiController
     ///
     // public function initRule(){
     //     $rules = [];
-    //     $rules['tittle'] = 'required|string|max:255';
+    //     $rules['title'] = 'required|string|max:255';
     //     return $rules;
     // }
     ////
@@ -77,7 +77,7 @@ class TodoController extends ApiController
     public function initMessage(){
     $messages = [];
     $messages = [
-        'tittle' => "Please update the todo's tittle",
+        'title' => "Please update the todo's title",
     ];
     return $messages;
 }
@@ -121,14 +121,21 @@ class TodoController extends ApiController
       $todo=Todo::find($id);
       $messages = $this->initMessage();
       $validator = Validator::make($request->all(), [
-        'tittle' => 'required|String|max:255',
+        'title' => 'required|String|max:255',
       ], $messages);
       if ($validator->fails()) {
         return $this->setStatusCode(400)->setErrors($validator->messages())->withError('error');
       } else {
         try {
           echo 'validator success';
-            $todo['tittle']=$request->tittle;
+            $todo['title']=$request->title;
+            $todo['description']=$request->description;
+            if ($request->color) {
+              $todo['color']=$request->color;
+            }
+            if ($request->due_day) {
+             $todo['due_day']=$request->due_day;
+            }
             $todo->save();
             return $this->withSuccess('Updated', $todo);
         } catch (\Exception $e) {
@@ -159,7 +166,7 @@ class TodoController extends ApiController
     public function dataFilter($data){
       echo 'test3';
         $pureData = [];
-        $pureData['tittle'] =  $data->tittle;
+        $pureData['title'] =  $data->title;
         $pureData['color'] =  $data->color;
         $pureData['description'] =  $data->description;
         $pureData['due_day'] =  $data->due_day;

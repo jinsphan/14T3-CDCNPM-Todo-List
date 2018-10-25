@@ -61,7 +61,7 @@ export default class Note extends Component {
                                 <div className="card-body">
                                     <textarea
                                         className="form-control card-text text-light "
-                                        defaultValue={data.body}
+                                        defaultValue={data.description}
                                         rows={3}
                                         name="body"
                                         onKeyDown={e=>{this.onKeyDown(e)}}
@@ -80,7 +80,7 @@ export default class Note extends Component {
                                 </a>
                             </div>
                             <div className="card-body">
-                                <p className="card-text">{data.body}</p>
+                                <p className="card-text">{data.description}</p>
                             </div>
                         </div>
                 }
