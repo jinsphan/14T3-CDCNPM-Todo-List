@@ -127,7 +127,6 @@ class TodoController extends ApiController
         return $this->setStatusCode(400)->setErrors($validator->messages())->withError('error');
       } else {
         try {
-          echo 'validator success';
             $todo['title']=$request->title;
             $todo['description']=$request->description;
             if ($request->color) {

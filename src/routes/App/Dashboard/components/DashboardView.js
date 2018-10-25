@@ -12,7 +12,9 @@ import { findIndex, remove } from 'lodash'
 
 // Actions
 import {
-  getTodos
+  getTodos,
+  delTodo,
+  editTodo
 } from "../../../../store/todos";
 
 
@@ -58,7 +60,7 @@ export class DashboardView extends Component {
   }
 
   componentWillReceiveProps(nextProps) {
-    if (nextProps.todos.length > 0) {
+    if (nextProps.todos) {
       console.log( nextProps.todos);
       this.setState({
         listNote: nextProps.todos
@@ -83,20 +85,23 @@ export class DashboardView extends Component {
     })
   }
   edit = (data) => {
-    let { listNote } = this.state;
-    const index = findIndex(this.state.listNote, e => { return e.id === data.id })
-    listNote[index] = data;
-    this.setState({
-      listNote
-    })
+    let todo = this.state.listNote.find(item => item.id == data.id);
+    if (todo) {
+      todo = {
+        ...todo,
+        ...data
+      }
+    }
+    this.props.dispatch(editTodo(todo));
   }
   delete = (id) => {
-    let { listNote } = this.state;
+    this.props.dispatch(delTodo(id));
+    // let { listNote } = this.state;
 
-    listNote = remove(listNote, e => { return e.id !== id })
-    this.setState({
-      listNote
-    })
+    // listNote = remove(listNote, e => { return e.id !== id })
+    // this.setState({
+    //   listNote
+    // })
   }
   render() {
     const { listNote } = this.state
