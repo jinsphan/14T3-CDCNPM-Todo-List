@@ -4,6 +4,7 @@ import { api } from '../services/api/_apiFactoryWithHeader';
 export const GET_TODOS = "GET_TODOS";
 export const EDIT_TODO = "EDIT_TODOS";
 export const DELETE_TODO = "DELETE_TODO";
+export const ADD_TODO = "ADD_TODO";
 
 
 export const getTodos = () => dispatch => {
@@ -36,6 +37,19 @@ export const editTodo = data => dispatch => {
                 type: EDIT_TODO,
                 payload: res.data
             })
+        }
+    })
+}
+
+export const addTodo = data => dispatch => {
+    return api.post("todo", data)
+    .then(res => {
+        if (res.data) {
+            console.log(res);
+            // dispatch({
+            //     type: ADD_TODO,
+            //     payload: res.data
+            // })
         }
     })
 }

@@ -96,12 +96,7 @@ export class DashboardView extends Component {
   }
   delete = (id) => {
     this.props.dispatch(delTodo(id));
-    // let { listNote } = this.state;
-
-    // listNote = remove(listNote, e => { return e.id !== id })
-    // this.setState({
-    //   listNote
-    // })
+  
   }
   render() {
     const { listNote } = this.state
