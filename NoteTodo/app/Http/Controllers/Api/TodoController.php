@@ -17,7 +17,8 @@ class TodoController extends ApiController
      */
     public function index()
     {
-        $todo=Todo::orderBy('created_at','desc');
+
+        $todo=Todo::orderBy('created_at','desc')->get();
         foreach ($todo as $item) {
           $item->created=$item->created_at->format('d M Y');
         }
@@ -141,11 +142,7 @@ class TodoController extends ApiController
       $messages = $this->initMessage();
         try {
             $todo->delete();
-<<<<<<< HEAD
-            return $this->withSuccess('Deleted',null);
-=======
             return $this->withSuccess('Deleted', null);
->>>>>>> vuong_token
         } catch (\Exception $e) {
 
             return $this->setStatusCode(500)->withError($e->getMessage());
