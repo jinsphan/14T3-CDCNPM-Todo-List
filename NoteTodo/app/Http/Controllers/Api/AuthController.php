@@ -5,42 +5,43 @@ namespace App\Http\Controllers\Api;
 use Illuminate\Http\Request;
 use App\Models\User;
 use Illuminate\Support\Facades\Validator;
+use JWTAuth;
 
 class AuthController extends ApiController
 {
-
-  public function login(Request $request)
-{
-  echo "1";
-    $validator = Validator::make($request->all(), [
-        'email' => 'required|string|max:255',
-        'password' => 'required|string'
-    ]);
-
-    if ($validator->fails()) {
-      echo "2";
-        return $this->setStatusCode(400)->setErrors($validator->messages())->withError($validator->messages()->first());
-    }else {
-      echo "3";
-        $credentials = $request->only('email', 'password');
-        if(isset($request->loginType) && $request->loginType == 'web'){
-          echo "4";
-            if ($token = $this->guard('web')->attempt($credentials)) {
-              echo "5";
-                return $this->respondWithToken($token);
-            }
-        }else{
-          echo "6";
-            if ($token = $this->guard()->attempt($credentials)) {
-              echo "7";
-                return $this->respondWithToken($token);
-            }
-        }
-
-
-        return $this->setStatusCode(400)->withError(trans('auth.failed'));
+    public function __construct()
+    {
+        $this->middleware('auth:api', ['except' => ['login', 'register', 'forgotPassword','test']]);
     }
-}
+
+
+//login function
+    public function login(Request $request)
+    {
+        $validator = Validator::make($request->all(), [
+            'email' => 'required|string|max:255',
+            'password' => 'required|string'
+        ]);
+
+        if ($validator->fails()) {
+            return $this->setStatusCode(400)->setErrors($validator->messages())->withError($validator->messages()->first());
+        }else {
+            $credentials = $request->only('email', 'password');
+
+            if(isset($request->loginType) && $request->loginType == 'web'){
+                if ($token = $this->guard('web')->attempt($credentials)) {
+                    return $this->respondWithToken($token);
+                }
+            }else{
+                if ($token = $this->guard()->attempt($credentials)) {
+                    return $this->respondWithToken($token);
+                }
+            }
+
+
+            return $this->setStatusCode(400)->withError(trans('auth.failed'));
+        }
+    }
 
     public function register(Request $request)
     {
