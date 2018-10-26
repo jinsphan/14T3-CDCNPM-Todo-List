@@ -10,10 +10,10 @@ export const ADD_TODO = "ADD_TODO";
 export const getTodos = () => dispatch => {
     return api.get("todo")
         .then(res => {
-            if (res.data && res.data.data) {
+            if (res && res.data) {
                 dispatch({
                     type: GET_TODOS,
-                    payload: res.data.data
+                    payload: res.data
                 })
             }
         })
@@ -31,27 +31,26 @@ export const delTodo = (id) => dispatch => {
 
 export const editTodo = data => dispatch => {
     return api.put("todo/" + data.id, data)
-    .then(res => {
-        if (res.data) {
-            dispatch({
-                type: EDIT_TODO,
-                payload: res.data
-            })
-        }
-    })
+        .then(res => {
+            if (res.data) {
+                dispatch({
+                    type: EDIT_TODO,
+                    payload: res.data
+                })
+            }
+        })
 }
 
 export const addTodo = data => dispatch => {
     return api.post("todo", data)
-    .then(res => {
-        if (res.data) {
-            console.log(res);
-            // dispatch({
-            //     type: ADD_TODO,
-            //     payload: res.data
-            // })
-        }
-    })
+        .then(res => {
+            if (res.data) {
+                dispatch({
+                    type: ADD_TODO,
+                    payload: res.data
+                })
+            }
+        })
 }
 
 
@@ -60,50 +59,50 @@ export const addTodo = data => dispatch => {
 // ------------------------------------
 
 const initState = [
-    {
-        title: 'hello 1',
-        body: 'note 1ahsdfaoidhfoadfasdfasdf',
-        id: 1
-    },
-    {
-        title: 'hello 2',
-        body: 'note 1ahsdfaoidhfoadfasdfasdf',
-        id: 2
-    },
-    {
-        title: 'hello 3',
-        body: 'note 1ahsdfaoidhfoadfasdfasdf',
-        id: 3
+    // {
+    //     title: 'hello 1',
+    //     body: 'note 1ahsdfaoidhfoadfasdfasdf',
+    //     id: 1
+    // },
+    // {
+    //     title: 'hello 2',
+    //     body: 'note 1ahsdfaoidhfoadfasdfasdf',
+    //     id: 2
+    // },
+    // {
+    //     title: 'hello 3',
+    //     body: 'note 1ahsdfaoidhfoadfasdfasdf',
+    //     id: 3
 
-    },
-    {
-        title: 'hello 4',
-        body: 'note 1ahsdfaoidhfoadfasdfasdf',
-        id: 4
+    // },
+    // {
+    //     title: 'hello 4',
+    //     body: 'note 1ahsdfaoidhfoadfasdfasdf',
+    //     id: 4
 
-    },
-    {
-        title: 'hello 1',
-        body: 'note 1ahsdfaoidhfoadfasdfasdf',
-        id: 5
-    },
-    {
-        title: 'hello 2',
-        body: 'note 1ahsdfaoidhfoadfasdfasdf',
-        id: 6
-    },
-    {
-        title: 'hello 3',
-        body: 'note 1ahsdfaoidhfoadfasdfasdf',
-        id: 7
+    // },
+    // {
+    //     title: 'hello 1',
+    //     body: 'note 1ahsdfaoidhfoadfasdfasdf',
+    //     id: 5
+    // },
+    // {
+    //     title: 'hello 2',
+    //     body: 'note 1ahsdfaoidhfoadfasdfasdf',
+    //     id: 6
+    // },
+    // {
+    //     title: 'hello 3',
+    //     body: 'note 1ahsdfaoidhfoadfasdfasdf',
+    //     id: 7
 
-    },
-    {
-        title: 'hello 4',
-        body: 'note 1ahsdfaoidhfoadfasdfasdf',
-        id: 8
+    // },
+    // {
+    //     title: 'hello 4',
+    //     body: 'note 1ahsdfaoidhfoadfasdfasdf',
+    //     id: 8
 
-    },
+    // },
 ]
 
 export default (state = initState, action) => {
@@ -118,6 +117,14 @@ export default (state = initState, action) => {
         case DELETE_TODO: {
             const todos = state.filter(item => item.id != action.id);
             return todos;
+        }
+        case ADD_TODO: {
+            return [
+                ...state.filter(item => !item.isNew),
+                {
+                    ...action.payload
+                }
+            ];
         }
         default: return state;
     }
