@@ -10,10 +10,10 @@ export const ADD_TODO = "ADD_TODO";
 export const getTodos = () => dispatch => {
     return api.get("todo")
         .then(res => {
-            if (res.data && res.data.data) {
+            if (res && res.data) {
                 dispatch({
                     type: GET_TODOS,
-                    payload: res.data.data
+                    payload: res.data
                 })
             }
         })
