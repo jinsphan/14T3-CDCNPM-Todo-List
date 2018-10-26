@@ -17,8 +17,7 @@ class TodoController extends ApiController
      */
     public function index()
     {
-        $limit = request()->limit ?: 10;
-        $todo=Todo::orderBy('created_at','desc')->paginate($limit);
+        $todo=Todo::orderBy('created_at','desc');
         foreach ($todo as $item) {
           $item->created=$item->created_at->format('d M Y');
         }
@@ -43,7 +42,6 @@ class TodoController extends ApiController
      */
     public function store(Request $request)
     {
-      // $rules = $this->initRule();
       $messages = $this->initMessage();
       $validator = Validator::make($request->all(), [
         'title' => 'required|String|max:255',
@@ -61,16 +59,6 @@ class TodoController extends ApiController
       }
     }
 
-    ///
-    // public function initRule(){
-    //     $rules = [];
-    //     $rules['title'] = 'required|string|max:255';
-    //     return $rules;
-    // }
-    ////
-
-
-    /////
 
     public function initMessage(){
     $messages = [];
@@ -93,7 +81,7 @@ class TodoController extends ApiController
           $todo->created=$todo->created_at->format('d M Y');
           $todo->user;
         }
-        return $this->withSuccess('result',$todo);
+        return $this->withSuccess('show',$todo);
     }
 
     /**
@@ -153,7 +141,11 @@ class TodoController extends ApiController
       $messages = $this->initMessage();
         try {
             $todo->delete();
-            return $this->withSuccess('Deleted', $todo);
+<<<<<<< HEAD
+            return $this->withSuccess('Deleted',null);
+=======
+            return $this->withSuccess('Deleted', null);
+>>>>>>> vuong_token
         } catch (\Exception $e) {
 
             return $this->setStatusCode(500)->withError($e->getMessage());
@@ -166,7 +158,6 @@ class TodoController extends ApiController
         $pureData['description'] =  $data->description;
         $pureData['due_day'] =  $data->due_day;
         $pureData['user_id'] =  $data->user_id;
-
         return $pureData;
     }
 }
