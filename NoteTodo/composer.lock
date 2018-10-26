@@ -4,7 +4,7 @@
         "Read more about it at https://getcomposer.org/doc/01-basic-usage.md#installing-dependencies",
         "This file is @generated automatically"
     ],
-    "content-hash": "4b46b6f474a5dd577511e7fdeb2f250b",
+    "content-hash": "e585d0b83fda0bc56ef8e272b883260d",
     "packages": [
         {
             "name": "asm89/stack-cors",
@@ -4539,9 +4539,7 @@
     ],
     "aliases": [],
     "minimum-stability": "dev",
-    "stability-flags": {
-        "tymon/jwt-auth": 20
-    },
+    "stability-flags": [],
     "prefer-stable": true,
     "prefer-lowest": false,
     "platform": {
