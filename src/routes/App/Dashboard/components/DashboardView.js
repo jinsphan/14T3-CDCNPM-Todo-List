@@ -95,10 +95,6 @@ export class DashboardView extends Component {
         ...data,
       };
 
-      this.setState({
-        listNote: this.state.listNote.filter(item => item.id != todo.id)
-      })
-
       this.props.dispatch(addTodo({
         title: todo.title,
         description: todo.description,

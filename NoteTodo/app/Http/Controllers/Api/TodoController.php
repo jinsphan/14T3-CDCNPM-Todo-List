@@ -141,11 +141,7 @@ class TodoController extends ApiController
       $messages = $this->initMessage();
         try {
             $todo->delete();
-<<<<<<< HEAD
-            return $this->withSuccess('Deleted',null);
-=======
             return $this->withSuccess('Deleted', null);
->>>>>>> vuong_token
         } catch (\Exception $e) {
 
             return $this->setStatusCode(500)->withError($e->getMessage());

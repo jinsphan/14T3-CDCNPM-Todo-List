@@ -45,7 +45,6 @@ export const addTodo = data => dispatch => {
     return api.post("todo", data)
         .then(res => {
             if (res.data) {
-                console.log(res.data);
                 dispatch({
                     type: ADD_TODO,
                     payload: res.data
@@ -60,50 +59,50 @@ export const addTodo = data => dispatch => {
 // ------------------------------------
 
 const initState = [
-    {
-        title: 'hello 1',
-        body: 'note 1ahsdfaoidhfoadfasdfasdf',
-        id: 1
-    },
-    {
-        title: 'hello 2',
-        body: 'note 1ahsdfaoidhfoadfasdfasdf',
-        id: 2
-    },
-    {
-        title: 'hello 3',
-        body: 'note 1ahsdfaoidhfoadfasdfasdf',
-        id: 3
+    // {
+    //     title: 'hello 1',
+    //     body: 'note 1ahsdfaoidhfoadfasdfasdf',
+    //     id: 1
+    // },
+    // {
+    //     title: 'hello 2',
+    //     body: 'note 1ahsdfaoidhfoadfasdfasdf',
+    //     id: 2
+    // },
+    // {
+    //     title: 'hello 3',
+    //     body: 'note 1ahsdfaoidhfoadfasdfasdf',
+    //     id: 3
 
-    },
-    {
-        title: 'hello 4',
-        body: 'note 1ahsdfaoidhfoadfasdfasdf',
-        id: 4
+    // },
+    // {
+    //     title: 'hello 4',
+    //     body: 'note 1ahsdfaoidhfoadfasdfasdf',
+    //     id: 4
 
-    },
-    {
-        title: 'hello 1',
-        body: 'note 1ahsdfaoidhfoadfasdfasdf',
-        id: 5
-    },
-    {
-        title: 'hello 2',
-        body: 'note 1ahsdfaoidhfoadfasdfasdf',
-        id: 6
-    },
-    {
-        title: 'hello 3',
-        body: 'note 1ahsdfaoidhfoadfasdfasdf',
-        id: 7
+    // },
+    // {
+    //     title: 'hello 1',
+    //     body: 'note 1ahsdfaoidhfoadfasdfasdf',
+    //     id: 5
+    // },
+    // {
+    //     title: 'hello 2',
+    //     body: 'note 1ahsdfaoidhfoadfasdfasdf',
+    //     id: 6
+    // },
+    // {
+    //     title: 'hello 3',
+    //     body: 'note 1ahsdfaoidhfoadfasdfasdf',
+    //     id: 7
 
-    },
-    {
-        title: 'hello 4',
-        body: 'note 1ahsdfaoidhfoadfasdfasdf',
-        id: 8
+    // },
+    // {
+    //     title: 'hello 4',
+    //     body: 'note 1ahsdfaoidhfoadfasdfasdf',
+    //     id: 8
 
-    },
+    // },
 ]
 
 export default (state = initState, action) => {
@@ -121,9 +120,11 @@ export default (state = initState, action) => {
         }
         case ADD_TODO: {
             return [
-                ...state,
-                ...action.payload
-            ]
+                ...state.filter(item => !item.isNew),
+                {
+                    ...action.payload
+                }
+            ];
         }
         default: return state;
     }
