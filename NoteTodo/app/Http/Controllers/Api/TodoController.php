@@ -17,7 +17,8 @@ class TodoController extends ApiController
      */
     public function index()
     {
-        $todo=Todo::orderBy('created_at','desc');
+
+        $todo=Todo::orderBy('created_at','desc')->get();
         foreach ($todo as $item) {
           $item->created=$item->created_at->format('d M Y');
         }
@@ -42,7 +43,6 @@ class TodoController extends ApiController
      */
     public function store(Request $request)
     {
-      // $rules = $this->initRule();
       $messages = $this->initMessage();
       $validator = Validator::make($request->all(), [
         'title' => 'required|String|max:255',
@@ -60,16 +60,6 @@ class TodoController extends ApiController
       }
     }
 
-    ///
-    // public function initRule(){
-    //     $rules = [];
-    //     $rules['title'] = 'required|string|max:255';
-    //     return $rules;
-    // }
-    ////
-
-
-    /////
 
     public function initMessage(){
     $messages = [];
@@ -153,6 +143,7 @@ class TodoController extends ApiController
         try {
             $todo->delete();
             return $this->withSuccess('Deleted', null);
+
         } catch (\Exception $e) {
 
             return $this->setStatusCode(500)->withError($e->getMessage());
