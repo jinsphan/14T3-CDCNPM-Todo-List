@@ -39,7 +39,7 @@ class LoginView extends Component {
      
         <form className='form-horizontal form-material' id='loginform' onSubmit={(e) => this.login(e)}>
           <a href='javascript:void(0)' className='text-center' style={{margin : '0 50px'}}>
-          <img src={require('../../../styles/images//logo/logo_transparent.png')} style={{ width:'200px'}} alt='Home' />
+          <img src={"http://cdn.onlinewebfonts.com/svg/img_464401.png"} style={{ width:'200px'}} alt='Home' />
             <br />
             </a>
           <div className='form-group m-t-40'>

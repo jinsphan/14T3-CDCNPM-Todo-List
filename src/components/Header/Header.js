@@ -38,7 +38,7 @@ class Header extends Component{
                   <li className={`nav-item dropdown u-pro ${dropdownName === 'profile' && 'show'}`}>
                     <Link onClick={() => updateDropdown('profile')} className='nav-link dropdown-toggle waves-effect waves-dark profile-pic'>
                       <img src={require('../../styles/images/logo/logo.png')} alt='user' className='' />
-                      <span className='hidden-md-down' style={{ paddingLeft: '10px' }}>username &nbsp;<i className='fa fa-angle-down' /></span> </Link>
+                      <span className='hidden-md-down' style={{ paddingLeft: '10px' }}>Account &nbsp;<i className='fa fa-angle-down' /></span> </Link>
                     <div className={`dropdown-menu dropdown-menu-right animated flipInY ${dropdownName === 'profile' && 'show'}`}>
 
                       <Link to='/app/profile' onClick={() => updateDropdown('')}  className='dropdown-item'><i className='ti-user' /> My Profile</Link>

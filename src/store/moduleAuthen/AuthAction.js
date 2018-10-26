@@ -40,6 +40,9 @@ export const login = (us,pw) => dispatch => apiAuth.authenticate(us,pw).then(res
             type: "SAVE_USER",
             user: res.data.user
         })
+
+        localStorage.setItem("user_authen", res.data.user.id);
+
         setAccessToken(res.data.access_token)
         CacheService.saveAuthData(res.data)
         browserHistory.push('/')

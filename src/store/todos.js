@@ -120,10 +120,11 @@ export default (state = initState, action) => {
         }
         case ADD_TODO: {
             return [
-                ...state.filter(item => !item.isNew),
                 {
                     ...action.payload
-                }
+                },
+                ...state.filter(item => !item.isNew),
+                
             ];
         }
         default: return state;

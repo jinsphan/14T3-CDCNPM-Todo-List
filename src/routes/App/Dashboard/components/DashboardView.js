@@ -68,7 +68,7 @@ export class DashboardView extends Component {
     if (nextProps.todos) {
       console.log(nextProps.todos);
       this.setState({
-        listNote: nextProps.todos.filter(item => item.user_id == nextProps.authen.user.id)
+        listNote: nextProps.todos.filter(item => +item.user_id == +localStorage.getItem("user_authen"))
       })
     }
   }
@@ -102,7 +102,7 @@ export class DashboardView extends Component {
       this.props.dispatch(addTodo({
         title: todo.title,
         description: todo.description,
-        user_id: this.props.user.id
+        user_id: +localStorage.getItem("user_authen")
       }));
       
     } else {
