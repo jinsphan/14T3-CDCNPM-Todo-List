@@ -16,6 +16,7 @@ export const getToken = ({
 export const loginSuccess = ({
     type : LOGIN_SUCCESS
 })
+
 export const loginFailure = ({
     type : LOGIN_FAILURE
 })
@@ -24,7 +25,7 @@ export const refreshToken = () => dispatch => {
     console.log('auth',auth)
     if(auth) {
         dispatch(loginSuccess);
-        browserHistory.push('/app')
+        browserHistory.push('/')
     } else {
         browserHistory.push('/login')
 
@@ -32,12 +33,16 @@ export const refreshToken = () => dispatch => {
 
 }
 export const login = (us,pw) => dispatch => apiAuth.authenticate(us,pw).then(res => {
-        console.log(res)
-    if(res.status){
+        console.log("login res", res)
+    if(res.data && res.data.access_token){
         dispatch(loginSuccess);
-        setAccessToken(res.data.Token)
+        dispatch({
+            type: "SAVE_USER",
+            user: res.data.user
+        })
+        setAccessToken(res.data.access_token)
         CacheService.saveAuthData(res.data)
-        browserHistory.push('/app')
+        browserHistory.push('/')
     }
     else {
         swal({
@@ -57,6 +62,7 @@ export const login = (us,pw) => dispatch => apiAuth.authenticate(us,pw).then(res
 });
 export const logout = () => dispatch => {
     dispatch(logoutSuccess)
+    browserHistory.push('/login')
 }
 export const logoutSuccess = ({
     type : LOGOUT

@@ -4,7 +4,7 @@
 import { api } from './_apiFactoryWithHeader';
 
 export const apiAuth = {
-    authenticate: (username, password) => api.postUrlFormEncoded('Login', {
-        username : username, password: password,
+    authenticate: (username, password) => api.post('login', {
+        email : username, password: password,
     }),
 }

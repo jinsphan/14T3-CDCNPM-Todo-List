@@ -54,7 +54,11 @@ export class DashboardView extends Component {
       ]
     }
 
-    console.log(props);
+
+    console.log("props.authen", props.authen);
+    if (props.authen.auth == false) {
+      window.location.replace("/login")
+    }
   }
   componentDidMount() {
     this.get();
@@ -64,7 +68,7 @@ export class DashboardView extends Component {
     if (nextProps.todos) {
       console.log(nextProps.todos);
       this.setState({
-        listNote: nextProps.todos
+        listNote: nextProps.todos.filter(item => item.user_id == nextProps.authen.user.id)
       })
     }
   }
@@ -98,7 +102,7 @@ export class DashboardView extends Component {
       this.props.dispatch(addTodo({
         title: todo.title,
         description: todo.description,
-        user_id: 1
+        user_id: this.props.user.id
       }));
       
     } else {
@@ -145,5 +149,6 @@ export class DashboardView extends Component {
 DashboardView.propTypes = {
 }
 export default connect((state) => ({
-  todos: state.todos
+  todos: state.todos,
+  authen: state.authen
 }))(DashboardView)
