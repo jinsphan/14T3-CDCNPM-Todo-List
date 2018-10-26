@@ -17,7 +17,8 @@ class TodoController extends ApiController
      */
     public function index()
     {
-        $todo=Todo::orderBy('created_at','desc');
+
+        $todo=Todo::orderBy('created_at','desc')->get();
         foreach ($todo as $item) {
           $item->created=$item->created_at->format('d M Y');
         }
