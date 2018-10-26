@@ -28,9 +28,8 @@ export default class Note extends Component {
         }
     }
     submit = (e) => {
-        const { data } = this.props
-        console.log('submit')
         e.preventDefault()
+        const { data } = this.props
         const fields = this.form.querySelectorAll('[name]');
         let formData= {}
         for( let field of fields){

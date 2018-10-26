@@ -52,12 +52,10 @@ class TodoController extends ApiController
         return $this->setStatusCode(400)->setErrors($validator->messages())->withError('error');
       } else {
         try {
-          echo 'validator success';
             $data = $this->dataFilter($request);
             $todo = Todo::create($data);
             return $this->withSuccess('Stored', $todo);
         } catch (\Exception $e) {
-          echo 'validator but try catch fail';
             return $this->setStatusCode(500)->withError($e->getMessage());
         }
       }
@@ -138,7 +136,6 @@ class TodoController extends ApiController
             $todo->save();
             return $this->withSuccess('Updated', $todo);
         } catch (\Exception $e) {
-          echo 'validator but try catch fail';
             return $this->setStatusCode(500)->withError($e->getMessage());
         }
       }
@@ -163,7 +160,6 @@ class TodoController extends ApiController
       }
     }
     public function dataFilter($data){
-      echo 'test3';
         $pureData = [];
         $pureData['title'] =  $data->title;
         $pureData['color'] =  $data->color;

@@ -31,27 +31,27 @@ export const delTodo = (id) => dispatch => {
 
 export const editTodo = data => dispatch => {
     return api.put("todo/" + data.id, data)
-    .then(res => {
-        if (res.data) {
-            dispatch({
-                type: EDIT_TODO,
-                payload: res.data
-            })
-        }
-    })
+        .then(res => {
+            if (res.data) {
+                dispatch({
+                    type: EDIT_TODO,
+                    payload: res.data
+                })
+            }
+        })
 }
 
 export const addTodo = data => dispatch => {
     return api.post("todo", data)
-    .then(res => {
-        if (res.data) {
-            console.log(res);
-            // dispatch({
-            //     type: ADD_TODO,
-            //     payload: res.data
-            // })
-        }
-    })
+        .then(res => {
+            if (res.data) {
+                console.log(res.data);
+                dispatch({
+                    type: ADD_TODO,
+                    payload: res.data
+                })
+            }
+        })
 }
 
 
@@ -118,6 +118,12 @@ export default (state = initState, action) => {
         case DELETE_TODO: {
             const todos = state.filter(item => item.id != action.id);
             return todos;
+        }
+        case ADD_TODO: {
+            return [
+                ...state,
+                ...action.payload
+            ]
         }
         default: return state;
     }

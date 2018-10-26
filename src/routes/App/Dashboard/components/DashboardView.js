@@ -14,7 +14,8 @@ import { findIndex, remove } from 'lodash'
 import {
   getTodos,
   delTodo,
-  editTodo
+  editTodo,
+  addTodo
 } from "../../../../store/todos";
 
 
@@ -61,7 +62,7 @@ export class DashboardView extends Component {
 
   componentWillReceiveProps(nextProps) {
     if (nextProps.todos) {
-      console.log( nextProps.todos);
+      console.log(nextProps.todos);
       this.setState({
         listNote: nextProps.todos
       })
@@ -86,17 +87,35 @@ export class DashboardView extends Component {
   }
   edit = (data) => {
     let todo = this.state.listNote.find(item => item.id == data.id);
-    if (todo) {
+    if (todo && todo.isNew) {
+      // Add note
+
       todo = {
         ...todo,
-        ...data
-      }
+        ...data,
+      };
+
+      this.setState({
+        listNote: this.state.listNote.filter(item => item.id != todo.id)
+      })
+
+      this.props.dispatch(addTodo({
+        title: todo.title,
+        description: todo.description,
+        user_id: 1
+      }));
+      
+    } else {
+        todo = {
+          ...todo,
+          ...data
+        }
+      this.props.dispatch(editTodo(todo));
     }
-    this.props.dispatch(editTodo(todo));
   }
   delete = (id) => {
     this.props.dispatch(delTodo(id));
-  
+
   }
   render() {
     const { listNote } = this.state
